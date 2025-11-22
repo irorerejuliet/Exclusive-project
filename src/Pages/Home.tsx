@@ -1,5 +1,6 @@
 import HeroSection from "../Components/Banner/HeroSection"
 import Navbar from "../Components/Layouts/Navbar"
+import FlashSales from "../Components/Products/FlashSales"
 
 
 const Home = () => {
@@ -7,6 +8,7 @@ const Home = () => {
     <div>
       <Navbar/>
       <HeroSection/>
+      <FlashSales/>
     </div>
   )
 }
