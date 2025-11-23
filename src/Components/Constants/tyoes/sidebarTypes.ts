@@ -10,3 +10,11 @@ export interface sidbarTypes {
   rating: number
   
 }
+
+
+
+export interface SalesDaysAndTime {
+  id: number;
+  title: string;
+  time: string;
+}

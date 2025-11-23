@@ -1,4 +1,4 @@
-import type { sidbarTypes } from "./tyoes/sidebarTypes";
+import type { SalesDaysAndTime, sidbarTypes } from "./tyoes/sidebarTypes";
 
 export const salesData: sidbarTypes[] = [
   {
@@ -36,7 +36,7 @@ export const salesData: sidbarTypes[] = [
   },
   {
     id: 4,
-    percentage: -40,
+    percentage: -25,
     heart: "/images/HeartIcon.svg",
     quickVeiw: "/images/Quick View.svg",
     gamepad: "/images/ComfortChair.svg",
@@ -44,5 +44,31 @@ export const salesData: sidbarTypes[] = [
     amount: ["$120", "$160"],
     stars: "/images/Five star.svg",
     rating: 88,
+  },
+];
+
+
+
+
+export const salesTime: SalesDaysAndTime[] = [
+  {
+    id: 1,
+    title: "Day",
+    time: "03",
+  },
+  {
+    id: 2,
+    title: "Hour",
+    time: "23",
+  },
+  {
+    id: 3,
+    title: "Minute",
+    time: "19",
+  },
+  {
+    id: 4,
+    title: "Seconds",
+    time: "56",
   },
 ];
