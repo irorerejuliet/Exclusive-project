@@ -8,7 +8,8 @@ export const salesData: sidbarTypes[] = [
     quickVeiw: "/images/Quick View.svg",
     gamepad: "/images/GamePad.svg",
     description: "HAVIT HV-G92 Gamepad",
-    amount: ["$120", "$160"],
+    price: 400,
+    discounted_price: 350,
     stars: "/images/Five star.svg",
     rating: 88,
   },
@@ -19,7 +20,8 @@ export const salesData: sidbarTypes[] = [
     quickVeiw: "/images/Quick View.svg",
     gamepad: "/images/KeyBoard.svg",
     description: "AK-900 Wired Keyboard",
-    amount: ["$120", "$160"],
+    price: 200,
+    discounted_price: 150,
     stars: "/images/Five star.svg",
     rating: 75,
   },
@@ -30,7 +32,8 @@ export const salesData: sidbarTypes[] = [
     quickVeiw: "/images/Quick View.svg",
     gamepad: "/images/GamingMonitor.svg",
     description: "IPS LCD Gaming Monitor",
-    amount: ["$120", "$160"],
+    price: 130,
+    discounted_price: 100,
     stars: "/images/Five star.svg",
     rating: 88,
   },
@@ -41,14 +44,12 @@ export const salesData: sidbarTypes[] = [
     quickVeiw: "/images/Quick View.svg",
     gamepad: "/images/ComfortChair.svg",
     description: "S-Series Comfort Chair",
-    amount: ["$120", "$160"],
+    price: 900,
+    discounted_price: 0,
     stars: "/images/Five star.svg",
     rating: 88,
   },
 ];
-
-
-
 
 export const salesTime: SalesDaysAndTime[] = [
   {

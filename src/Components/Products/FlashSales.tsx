@@ -1,8 +1,6 @@
-
 import { salesData } from "../Constants/salesData";
 import SalesTime from "./SalesTime";
-
-
+import { formatCurrency } from "../../helper/formatCurrency";
 const FlashSales = () => {
   return (
     <div className="my-40">
@@ -10,7 +8,7 @@ const FlashSales = () => {
         <div className="bg-[#DB4444] w-4 h-10 rounded-[5px]"></div>
         <p className="text-[#DB4444] text-base font-semibold">Today's</p>
       </div>
-      <SalesTime/>
+      <SalesTime />
       <div className="flex-row md:flex justify-between items-center gap-10 space-y-10 md:space-y-0">
         {salesData.map(
           ({
@@ -20,14 +18,15 @@ const FlashSales = () => {
             quickVeiw,
             gamepad,
             description,
-            amount,
+            price,
             stars,
             rating,
+            discounted_price,
           }) => (
             <div key={id} className="w-[270px] ">
               {/* Card */}
               <div className="relative bg-[#F5F5F5] shadow rounded-xl p-4">
-                <button className="absolute top-3 left-3 bg-[#DB4444] text-white py-1 px-2 rounded-md">
+                <button className="absolute top-3 left-3 bg-primary text-white py-1 px-2 rounded-md">
                   {percentage}
                 </button>
                 <div className="absolute top-3 right-3 flex flex-col gap-2">
@@ -41,9 +40,18 @@ const FlashSales = () => {
               {/* Product info below card */}
               <div className="mt-4 w-[210px]">
                 <p className="font-semibold text-lg">{description}</p>
-                <p className="text-[#DB4444] flex gap-4 font-medium">
-                  {amount} 
-                </p>
+                <div className="flex items-center gap-1">
+                  <p className="text-primary flex gap-4 font-medium">
+                    {discounted_price > 0
+                      ? formatCurrency(discounted_price)
+                      : formatCurrency(price)}
+                  </p>
+                  {discounted_price > 0 && (
+                    <p className="text-black/50 line-through flex gap-4 font-medium">
+                      {formatCurrency(price)}
+                    </p>
+                  )}
+                </div>
                 <div className="flex items-center gap-2 mt-1">
                   <img src={stars} alt="rating" />
                   <span className="text-gray-500">{rating}</span>
@@ -53,6 +61,10 @@ const FlashSales = () => {
           )
         )}
       </div>
+      <button className="text-white bg-[#DB4444] text-base font-medium px-10 py-4 rounded-md my-16 w-[234px]">
+        View All Products
+      </button>
+      <div className="w-full border-t border-gray-200"></div>
     </div>
   );
 };
