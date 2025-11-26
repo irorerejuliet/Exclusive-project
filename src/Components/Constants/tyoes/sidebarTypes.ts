@@ -16,3 +16,14 @@ export interface SalesDaysAndTime {
   title: string;
   time: string;
 }
+
+export interface exploreOurProductDataTypes {
+  id: number;
+  heart: string;
+  quickView: string;
+  image: string;
+  description: string;
+  amount: number;
+  stars: string;
+  rating: number;
+}

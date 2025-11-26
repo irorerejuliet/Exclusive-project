@@ -1,5 +1,6 @@
-import React from "react"
+
 import { exploreOurProductData } from "../Constants/exploreOurProductData";
+import { formatCurrency } from "../../helper/formatCurrency";
 
 const ExploreOurProducts = () => {
   return (
@@ -28,7 +29,7 @@ const ExploreOurProducts = () => {
           ({
             id,
             heart,
-            quickVeiw,
+            quickView,
             image,
             description,
             price,
@@ -39,10 +40,9 @@ const ExploreOurProducts = () => {
             <div key={id} className="w-[270px] ">
               {/* Card */}
               <div className="relative bg-[#F5F5F5] shadow rounded-xl p-4">
-         
                 <div className="absolute top-3 right-3 flex flex-col gap-2">
                   <img src={heart} alt="heart" />
-                  <img src={quickVeiw} alt="quickview" />
+                  <img src={quickView} alt="quickview" />
                 </div>
                 <div className="flex justify-center my-6">
                   <img src={image} alt="GamePad" className="h-24 w-auto" />
