@@ -4,8 +4,8 @@ const Categories = () => {
   return (
     <div>
       <div className="flex gap-4 items-center">
-        <div className="bg-[#DB4444] w-4 h-10 rounded-[5px]"></div>
-        <p className="text-[#DB4444] text-base font-semibold">Today's</p>
+        <div className="bg-primary w-4 h-10 rounded-[5px]"></div>
+        <p className="text-primary text-base font-semibold">Today's</p>
       </div>
       <div className="flex justify-between items-center mb-7">
         <h4 className="md:text-3xl font-semibold">Browse By Category</h4>
