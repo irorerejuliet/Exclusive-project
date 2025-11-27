@@ -1,10 +1,49 @@
 
 import { exploreOurProductData } from "../Constants/exploreOurProductData";
-import { formatCurrency } from "../../helper/formatCurrency";
 
 const ExploreOurProducts = () => {
+  // type Product = {
+  //   id: number;
+  //   title: string;
+  //   price: string;
+  //   rating: string;
+  //   image: string;
+  //   button?: boolean;
+  // };
+
+  // const products: Product[] = [
+  //   {
+  //     id: 1,
+  //     title: "Breed Dry Dog Food",
+  //     price: "$100",
+  //     rating: "★★★☆☆ (35)",
+  //     image: "/images/DryDoogFood.svg",
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "CANON EOS DSLR Camera",
+  //     price: "$360",
+  //     rating: "★★★★☆ (95)",
+  //     image: "/images/Camera.svg",
+  //     button: true,
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "ASUS FHD Gaming Laptop",
+  //     price: "$700",
+  //     rating: "★★★★★ (325)",
+  //     image: "public/images/GamingLaptop.svg",
+  //   },
+  //   {
+  //     id: 4,
+  //     title: "Curology Product Set",
+  //     price: "$500",
+  //     rating: "★★★★☆ (145)",
+  //     image: "/images/iphone-17.jpeg",
+  //   },
+  // ];
   return (
-    <div className="my-40">
+    <div className="my-40 w-[1170px]">
       <div className="flex gap-4 items-center">
         <div className="bg-primary w-4 h-10 rounded-[5px]"></div>
         <p className="text-primary text-base font-semibold">Our Products</p>
@@ -24,7 +63,7 @@ const ExploreOurProducts = () => {
           />
         </div>
       </div>
-      <div className="flex-row md:flex justify-between items-center gap-10 space-y-10 md:space-y-0">
+      <div className="flex-row md:flex justify-between items-center gap-10 space-y-10 md:space-y-0 ">
         {exploreOurProductData.map(
           ({
             id,
@@ -32,12 +71,11 @@ const ExploreOurProducts = () => {
             quickView,
             image,
             description,
-            price,
+            amount,
             stars,
             rating,
-            discounted_price,
           }) => (
-            <div key={id} className="w-[270px] ">
+            <div key={id} className=" w-[270px]">
               {/* Card */}
               <div className="relative bg-[#F5F5F5] shadow rounded-xl p-4">
                 <div className="absolute top-3 right-3 flex flex-col gap-2">
@@ -49,21 +87,12 @@ const ExploreOurProducts = () => {
                 </div>
               </div>
               {/* Product info below card */}
-              <div className="mt-4 w-[210px]">
-                <p className="font-semibold text-lg">{description}</p>
+              <div className="mt-4">
+                <p className="font-semibold text-lg mr-20 w-[185px]">{description}</p>
                 <div className="flex items-center gap-1">
                   <p className="text-primary flex gap-4 font-medium">
-                    {discounted_price > 0
-                      ? formatCurrency(discounted_price)
-                      : formatCurrency(price)}
+                    {amount}
                   </p>
-                  {discounted_price > 0 && (
-                    <p className="text-black/50 line-through flex gap-4 font-medium">
-                      {formatCurrency(price)}
-                    </p>
-                  )}
-                </div>
-                <div className="flex items-center gap-2 mt-1">
                   <img src={stars} alt="rating" />
                   <span className="text-gray-500">{rating}</span>
                 </div>
@@ -73,6 +102,27 @@ const ExploreOurProducts = () => {
         )}
       </div>
     </div>
+    // <div className="flex gap-6 p-6 bg-white">
+    //   {products.map((product) => (
+    //     <div key={product.id} className="w-56 text-left shadow rounded-xl p-4">
+    //       <img
+    //         src={product.image}
+    //         alt={product.title}
+    //         className="w-full rounded-lg"
+    //       />
+
+    //       {product.button && (
+    //         <button className="w-full bg-black text-white py-2 mt-3 rounded-md">
+    //           Add To Cart
+    //         </button>
+    //       )}
+
+    //       <p className="mt-2 text-sm">{product.title}</p>
+    //       <p className="text-red-500 font-semibold text-sm">{product.price}</p>
+    //       <p className="text-gray-500 text-sm">{product.rating}</p>
+    //     </div>
+    //   ))}
+    // </div>
   );
 }
 
