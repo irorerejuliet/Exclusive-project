@@ -3,3 +3,7 @@
 @theme {
   --color-primary: #db4444;
 }
+
+.wrapper {
+  @apply mx-auto container w-full px-4;
+}

@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { HiMenuAlt1 } from "react-icons/hi";
@@ -9,7 +8,7 @@ const Navbar = () => {
 
   return (
     <header>
-      <nav className="flex justify-between items-center px-4 py-4 relative bg-white">
+      <nav className="flex justify-between items-center px-4 py-4 relative bg-white wrapper">
         <h1 className="text-4xl font-bold">Exclusive</h1>
         <div className="hidden md:flex gap-6 items-center text-base font-normal">
           <Link to="">Home</Link>

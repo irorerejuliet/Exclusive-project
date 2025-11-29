@@ -1,13 +1,12 @@
 import { salesTime } from "../Constants/salesData";
 
-
 const MusicExperience = () => {
   return (
-    <div className="bg-black text-white flex gap-20 items-center py-20 px-12">
-      <div className="w-[443px]">
+    <div className="bg-black text-white flex  py-20 px-12">
+      <div className="">
         <p className="text-[#00FF66] text-base font-bold">Categories</p>
-        <h2 className="text-5xl font-semibold ">
-          Enhance Your Music Experience
+        <h2 className="text-5xl leading-[60px] tracking-[4%] font-semibold ">
+          Enhance Your <br /> Music Experience
         </h2>
         <div className="flex gap-4 ">
           {salesTime.map(({ id, title, time }) => (
@@ -20,11 +19,13 @@ const MusicExperience = () => {
             </div>
           ))}
         </div>
-        <button className="text-lg bg-[#00FF66] text-white py-2 px-4 w-[171px] rounded-4">Buy now</button>
+        <button className="text-lg bg-[#00FF66] text-white py-2 px-4 w-[171px] rounded-4">
+          Buy now
+        </button>
       </div>
       <img src="/images/JBL_BOOMBOX_2_HERO_image.svg" alt="jblBoomBox" />
     </div>
   );
-}
+};
 
-export default MusicExperience
+export default MusicExperience;
