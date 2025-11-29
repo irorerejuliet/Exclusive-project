@@ -13,8 +13,8 @@ const Navbar = () => {
         <h1 className="text-4xl font-bold">Exclusive</h1>
         <div className="hidden md:flex gap-6 items-center text-base font-normal">
           <Link to="">Home</Link>
-          <Link to="">Contac</Link>
-          <Link to="">About</Link>
+          <Link to="">Contact</Link>
+          <Link to="/about">About</Link>
           <Link to="">SignUp</Link>
         </div>
 
