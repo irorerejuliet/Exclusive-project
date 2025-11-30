@@ -43,7 +43,7 @@ const ExploreOurProducts = () => {
   //   },
   // ];
   return (
-    <div className="my-40 w-[1170px]">
+    <div className="my-40 ">
       <div className="flex gap-4 items-center">
         <div className="bg-primary w-4 h-10 rounded-[5px]"></div>
         <p className="text-primary text-base font-semibold">Our Products</p>
