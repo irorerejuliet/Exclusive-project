@@ -9,8 +9,8 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-black text-white py-12">
-      <section className="wrapper">
+    <footer className="w-full bg-black text-white py-12 ">
+      <section className="wrapper md:py-0 py-5">
         <div className="grid grid-cols-1 md:grid-cols-5 ">
           {/* Exclusive */}
           <div>
@@ -28,7 +28,7 @@ const Footer = () => {
           </div>
 
           {/* Support */}
-          <div className="ml-14">
+          <div className="ml-10">
             <h3 className="text-xl font-semibold mb-4">Support</h3>
             <p className="mb-2">111 Bijoy sarani, Dhaka,</p>
             <p className="mb-2">DH 1515, Bangladesh.</p>
@@ -66,8 +66,16 @@ const Footer = () => {
                 className="w-16 h-16"
               />
               <div className="flex flex-col gap-2">
-                <img src="/google.png" alt="Google Play" className="w-28" />
-                <img src="/appstore.png" alt="App Store" className="w-28" />
+                <img
+                  src="/images/google.svg"
+                  alt="Google Play"
+                  className="w-28"
+                />
+                <img
+                  src="/images/AppStore.svg"
+                  alt="App Store"
+                  className="w-28"
+                />
               </div>
             </div>
             <div className="flex gap-4 text-lg">

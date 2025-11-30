@@ -1,21 +1,23 @@
+import { deliveryData } from "../Constants/deliveryData";
 
 const DeliveryService = () => {
   return (
-    <div className="mt-40 ">
-      <div>
-        <div className=" w-80 rounded-full p-1">
-          <img
-            src="/images/Free&FastDelivery.svg"
-            alt="delivery-service"
-            className="bg-black  rounded-full p-2 border"
-          />
+    <div className="my-40 md:flex flex-row justify-center gap-60 items-center">
+      {deliveryData.map(({ id, image, title, description }) => (
+        <div key={id} className="flex flex-col items-center text-center md:py-0 py-5">
+          <div className="w-16 h-16 rounded-full bg-[#C1C0C1] p-1 flex items-center justify-center">
+            <img
+              src={image}
+              alt="delivery-service"
+              className="w-12 h-12 rounded-full p-2 bg-black"
+            />
+          </div>
+          <h3 className="text-xl font-semibold mt-4">{title}</h3>
+          <p className="text-sm font-normal">{description}</p>
         </div>
-        <h3 className="text-lg font-semibold">FREE AND FAST DELIVERY</h3>
-      </div>
-      <div></div>
-      <div></div>
+      ))}
     </div>
   );
-}
+};
 
-export default DeliveryService
+export default DeliveryService;
