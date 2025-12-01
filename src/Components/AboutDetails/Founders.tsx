@@ -1,17 +1,32 @@
-import React from 'react'
+import React from "react";
+import { foundersData } from "../Constants/aboutData";
 
 const Founders = () => {
   return (
-    <div>
-      <img src="/images/TomCruise.svg" alt="tomCruise" />
-      <p>Founder & Chairman</p>
-      <div>
-        <img src="" alt="Twitter" />
-        <img src="" alt="Instagram" />
-        <img src="" alt="Likedin" />
-      </div>
-    </div>
-  )
-}
+    <div className="flex items-center gap-6">
+      {foundersData.map(
+        ({ id, image, title, subTitle, instagram, twitter, linkdin }) => {
+          const InstagramIcon = instagram;
+          const TwitterIcon = twitter;
+          const LinkedinIcon = linkdin;
 
-export default Founders
+          return (
+            <div key={id}>
+              <img src={image} alt={title} />
+              <p>{title}</p>
+              <p>{subTitle}</p>
+
+              <div className="text-black flex items-center gap-3 text-xl">
+                <TwitterIcon />
+                <InstagramIcon />
+                <LinkedinIcon />
+              </div>
+            </div>
+          );
+        }
+      )}
+    </div>
+  );
+};
+
+export default Founders;

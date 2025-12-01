@@ -1,8 +1,7 @@
 import React from "react";
 
 import { FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
-import { IconType } from "react-icons"; // NOT a default import
-
+import type { IconBaseProps } from "react-icons";
 
 export const activityData = [
   {
@@ -24,26 +23,21 @@ export const activityData = [
     title: "Customer active in our site",
   },
   {
-    id: 3,
+    id: 4,
     image: "/images/Icon-Moneybag.svg",
     title: "Anual gross sale in our site",
     likes: "25k",
   },
 ];
 
-
-
-
-
-
 interface Founder {
   id: number;
   image: string;
   title: string;
   subTitle: string;
-  instagram: IconType;
-  twitter: IconType;
-  linkdin: IconType;
+  instagram: React.ComponentType<IconBaseProps>;
+  twitter: React.ComponentType<IconBaseProps>;
+  linkdin: React.ComponentType<IconBaseProps>;
 }
 
 export const foundersData: Founder[] = [
@@ -56,5 +50,22 @@ export const foundersData: Founder[] = [
     twitter: FaTwitter,
     linkdin: FaLinkedinIn,
   },
+  {
+    id: 2,
+    image: "/images/EmmaWatson.svg",
+    title: "Emma Watson",
+    subTitle: "Managing Director",
+    instagram: FaInstagram,
+    twitter: FaTwitter,
+    linkdin: FaLinkedinIn,
+  },
+  {
+    id: 3,
+    image: "/images/WillSmith.svg",
+    title: "wILL Smith",
+    subTitle: "Product Designer",
+    instagram: FaInstagram,
+    twitter: FaTwitter,
+    linkdin: FaLinkedinIn,
+  },
 ];
-
