@@ -3,11 +3,11 @@ import { categoriesData } from "../Constants/categoriesData";
 const Categories = () => {
   return (
     <div>
-      <div className="flex gap-4 items-center">
+      <div className="flex  gap-4 items-center">
         <div className="bg-primary w-4 h-10 rounded-[5px]"></div>
         <p className="text-primary text-base font-semibold">Today's</p>
       </div>
-      <div className="flex justify-between items-center mb-7">
+      <div className="flex justify-between  items-center mb-7">
         <h4 className="md:text-3xl font-semibold">Browse By Category</h4>
         <div className="flex gap-3 md:py-0 py-5">
           <img
@@ -22,13 +22,13 @@ const Categories = () => {
           />
         </div>
       </div>
-      <div className="grid md:grid-cols-6 grid-cols-1">
+      <div className="grid md:grid-cols-6 gap-5  grid-cols-1">
         {categoriesData.map(({ id, image, title }) => (
           <div
-            className="w-[170px] shadow border border-gray-200 py-3 px-1 rounded-4 "
+            className=" shadow border border-gray-200 py-3 px-1 rounded-4 text-center"
             key={id}
           >
-            <img src={image} alt="cellPhone" className="ml-12" />
+            <img src={image} alt="cellPhone" className="text-center m-auto" />
             <p>{title}</p>
           </div>
         ))}

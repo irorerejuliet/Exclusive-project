@@ -19,3 +19,6 @@ export const deliveryData = [
     description: "We reurn money within 30 days",
   },
 ];
+
+
+
