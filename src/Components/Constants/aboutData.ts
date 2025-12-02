@@ -1,7 +1,5 @@
-import React from "react";
 
-import { FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
-import type { IconBaseProps } from "react-icons";
+
 
 export const activityData = [
   {
@@ -30,42 +28,25 @@ export const activityData = [
   },
 ];
 
-interface Founder {
-  id: number;
-  image: string;
-  title: string;
-  subTitle: string;
-  instagram: React.ComponentType<IconBaseProps>;
-  twitter: React.ComponentType<IconBaseProps>;
-  linkdin: React.ComponentType<IconBaseProps>;
-}
 
-export const foundersData: Founder[] = [
+
+export const foundersData = [
   {
     id: 1,
     image: "/images/TomCruise.svg",
     title: "Tom Cruise",
     subTitle: "Founder & Chairman",
-    instagram: FaInstagram,
-    twitter: FaTwitter,
-    linkdin: FaLinkedinIn,
   },
   {
     id: 2,
     image: "/images/EmmaWatson.svg",
     title: "Emma Watson",
     subTitle: "Managing Director",
-    instagram: FaInstagram,
-    twitter: FaTwitter,
-    linkdin: FaLinkedinIn,
   },
   {
     id: 3,
     image: "/images/WillSmith.svg",
-    title: "wILL Smith",
+    title: "will Smith",
     subTitle: "Product Designer",
-    instagram: FaInstagram,
-    twitter: FaTwitter,
-    linkdin: FaLinkedinIn,
   },
 ];

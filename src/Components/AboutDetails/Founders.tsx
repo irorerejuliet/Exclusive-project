@@ -1,32 +1,27 @@
-import React from "react";
-import { foundersData } from "../Constants/aboutData";
+
+import React from 'react'
+import { foundersData } from '../Constants/aboutData';
+import { FaInstagram, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
 
 const Founders = () => {
   return (
-    <div className="flex items-center gap-6">
-      {foundersData.map(
-        ({ id, image, title, subTitle, instagram, twitter, linkdin }) => {
-          const InstagramIcon = instagram;
-          const TwitterIcon = twitter;
-          const LinkedinIcon = linkdin;
-
-          return (
-            <div key={id}>
-              <img src={image} alt={title} />
-              <p>{title}</p>
-              <p>{subTitle}</p>
-
-              <div className="text-black flex items-center gap-3 text-xl">
-                <TwitterIcon />
-                <InstagramIcon />
-                <LinkedinIcon />
-              </div>
-            </div>
-          );
-        }
-      )}
+    <div className="flex justify-between  items-center gap-10 wrapper">
+      {foundersData.map(({ id, image, title, subTitle }) => (
+        <div key={id}>
+          <div className="w-[370px] bg-[#F5F5F5] pt-6 ">
+            <img src={image} alt="tomCruise" className="text-center m-auto" />
+          </div>
+          <p className='text-2xl font font-medium pt-2'>{title}</p>
+          <p className='text-base font-normal py-1'>{subTitle}</p>
+          <div className="text-black flex gap-4 items-center py-1">
+            <FaTwitter />
+            <FaInstagram />
+            <FaLinkedinIn />
+          </div>
+        </div>
+      ))}
     </div>
   );
-};
+}
 
-export default Founders;
+export default Founders
