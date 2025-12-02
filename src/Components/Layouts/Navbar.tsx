@@ -14,7 +14,7 @@ const Navbar = () => {
           <Link to="">Home</Link>
           <Link to="/contact">Contact</Link>
           <Link to="/about">About</Link>
-          <Link to="">SignUp</Link>
+          <Link to="/signup">SignUp</Link>
         </div>
 
         {/* Search + Icons */}
@@ -44,9 +44,9 @@ const Navbar = () => {
           } flex-col md:hidden absolute top-full left-0 text-lg font-semibold text-red-900 px-4 pt-4 pb-6 gap-4 z-50`}
         >
           <Link to="">Home</Link>
-          <Link to="">Contac</Link>
-          <Link to="">About</Link>
-          <Link to="">SignUp</Link>
+          <Link to="/contact">Contact</Link>
+          <Link to="/about">About</Link>
+          <Link to="/signup">SignUp</Link>
         </div>
       </nav>
       <div className="w-full border-t border-gray-200"></div>

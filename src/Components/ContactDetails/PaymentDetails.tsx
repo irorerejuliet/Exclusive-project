@@ -58,7 +58,7 @@ const PaymentDetails = () => {
             </div>
 
             <textarea
-              rows="8"
+              rows={8}
               placeholder="Your Message"
               className="w-full p-4 rounded-xl bg-[#F5F5F5] border border-gray-200 focus:outline-none focus:ring-2 focus:ring-red-400"
             ></textarea>
