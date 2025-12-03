@@ -1,8 +1,36 @@
 import React from 'react'
-
 import { Link } from 'react-router-dom';
+import  { useForm } from "react-hook-form";
+import CustomInput from "../CustomInput";
+import { loginSchema, signupSchema } from "../../schema/auth";
+import { zodResolver } from "@hookform/resolvers/zod";
+import type z from "zod";
+
+type LoginFormData = z.infer<typeof loginSchema>;
+
+
 
 const SignupDetails = () => {
+
+const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<LoginFormData>({
+    resolver: zodResolver(signupSchema),
+    defaultValues: {
+      email: "",
+      password: "",
+    },
+  });
+
+
+  const onSubmit = (data: LoginFormData) => {
+    console.log("Form Data:", data);
+    
+  }
+
+
   return (
     <div className="flex justify-between  items-center wrapper my-28">
       <div>
@@ -11,21 +39,22 @@ const SignupDetails = () => {
       <div className="w-[371px] space-y-10">
         <h4 className="text-3xl font-medium">Create an account</h4>
         <p className="text-base font-normal">Enter your details below</p>
-        <form className="flex flex-col space-y-8">
-          <input
-            type="text"
-            placeholder="Name"
-            className="border-b-2 border-gray-300"
-          />
-          <input
+        <form
+          className="flex flex-col space-y-8"
+          onSubmit={handleSubmit(onSubmit)}
+        >
+          <CustomInput type="text" placeholder="Name" />
+          <CustomInput
             type="text"
             placeholder="Email or Phone Number"
-            className="border-b-2 border-gray-300"
+            register={register("email")}
+            error={errors.email}
           />
-          <input
+          <CustomInput
             type="text"
             placeholder="Password"
-            className="border-b-2 border-gray-300"
+            register={register("password")}
+            error={errors.password}
           />
 
           <button className="text-white bg-primary rounded-md py-3 px-7 hover:bg-blue-500">
@@ -38,7 +67,7 @@ const SignupDetails = () => {
           </button>
 
           <p>
-            Already have an acount?{" "}
+            Already have an acount?
             <Link
               to="/login"
               className="underline text-sm font-normal inline-block hover:bg-blue-900 hover:text-white "

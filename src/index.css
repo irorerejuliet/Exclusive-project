@@ -5,5 +5,5 @@
 }
 
 .wrapper {
-  @apply mx-auto container w-full px-4;
+  @apply mx-auto container w-full ;
 }

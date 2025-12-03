@@ -8,7 +8,7 @@ const Navbar = () => {
 
   return (
     <header>
-      <nav className="flex justify-between items-center px-4 py-4 relative bg-white wrapper">
+      <nav className="flex justify-between items-center  py-4 relative bg-white wrapper">
         <h1 className="text-4xl font-bold">Exclusive</h1>
         <div className="hidden md:flex gap-6 items-center text-base font-normal">
           <Link to="">Home</Link>
