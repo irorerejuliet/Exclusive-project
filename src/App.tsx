@@ -6,6 +6,7 @@ import Navbar from "./Components/Layouts/Navbar";
 import Contact from "./Pages/Contact";
 import SignUp from "./Pages/SignUp";
 import Login from "./Pages/Login";
+import WishLists from "./Pages/WishLists";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/wishlistes" element={<WishLists />} />
       </Routes>
       <Footer />
     </>

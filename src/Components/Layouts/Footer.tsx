@@ -6,6 +6,8 @@ import {
   FaInstagram,
   FaLinkedinIn,
 } from "react-icons/fa";
+import Link  from "react-router-dom";
+
 
 const Footer = () => {
   return (
@@ -39,10 +41,10 @@ const Footer = () => {
           {/* Account */}
           <div>
             <h3 className="text-xl font-semibold mb-4">Account</h3>
-            <p className="mb-2">My Account</p>
+            <Link className="mb-2">My Account</Link>
             <p className="mb-2">Login / Register</p>
             <p className="mb-2">Cart</p>
-            <p className="mb-2">Wishlist</p>
+            <Link className="mb-2">Wishlist</Link>
             <p className="mb-2">Shop</p>
           </div>
 

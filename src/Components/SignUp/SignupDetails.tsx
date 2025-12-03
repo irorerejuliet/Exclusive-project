@@ -2,11 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import  { useForm } from "react-hook-form";
 import CustomInput from "../CustomInput";
-import { loginSchema, signupSchema } from "../../schema/auth";
+import { signupSchema } from "../../schema/auth";
 import { zodResolver } from "@hookform/resolvers/zod";
 import type z from "zod";
 
-type LoginFormData = z.infer<typeof loginSchema>;
+type SignupFormData = z.infer<typeof signupSchema>;
 
 
 
@@ -16,7 +16,7 @@ const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<LoginFormData>({
+  } = useForm<SignupFormData>({
     resolver: zodResolver(signupSchema),
     defaultValues: {
       email: "",
@@ -25,22 +25,22 @@ const {
   });
 
 
-  const onSubmit = (data: LoginFormData) => {
+  const onSubmit = (data: SignupFormData) => {
     console.log("Form Data:", data);
     
   }
 
 
   return (
-    <div className="flex justify-between  items-center wrapper my-28">
-      <div>
+    <div className="flex justify-between  items-center  my-28 ">
+      <div className=''>
         <img src="/images/beatsnoop.svg" alt="beatsnoop" />
       </div>
-      <div className="w-[371px] space-y-10">
+      <div className=" space-y-10 pr-64">
         <h4 className="text-3xl font-medium">Create an account</h4>
         <p className="text-base font-normal">Enter your details below</p>
         <form
-          className="flex flex-col space-y-8"
+          className="flex flex-col space-y-8 "
           onSubmit={handleSubmit(onSubmit)}
         >
           <CustomInput type="text" placeholder="Name" />

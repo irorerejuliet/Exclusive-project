@@ -22,8 +22,8 @@ const CustomInput = ({
       <input
         type={type}
         placeholder={placeholder}
-        {...register} // <-- This connects RHF to your input
-        className={`border-b-2 border-gray-300 focus:outline-none ${className}`}
+        {...register} 
+        className={`border-b-2 border-gray-300  focus:outline-none w-[371px] ${className}`}
       />
 
       {error && <p className="text-red-500 text-sm mt-1">{error.message}</p>}
