@@ -6,7 +6,9 @@ import {
   FaInstagram,
   FaLinkedinIn,
 } from "react-icons/fa";
-import Link  from "react-router-dom";
+import { Link } from "react-router-dom";
+
+
 
 
 const Footer = () => {
@@ -39,22 +41,42 @@ const Footer = () => {
           </div>
 
           {/* Account */}
-          <div>
+          <div className="text-white">
             <h3 className="text-xl font-semibold mb-4">Account</h3>
-            <Link className="mb-2">My Account</Link>
-            <p className="mb-2">Login / Register</p>
-            <p className="mb-2">Cart</p>
-            <Link className="mb-2">Wishlist</Link>
-            <p className="mb-2">Shop</p>
+            <div className="flex flex-col">
+              <Link to="" className="mb-2">
+                My Account
+              </Link>
+              <Link to="/login" className="mb-2">
+                Login / Signup
+              </Link>
+              <Link to="" className="mb-2">
+                Cart
+              </Link>
+              <Link to="/wishlists" className="mb-2">
+                Wishlist
+              </Link>
+              <Link to="" className="mb-2">
+                Shop
+              </Link>
+            </div>
           </div>
 
           {/* Quick Link */}
           <div>
             <h3 className="text-xl font-semibold mb-4">Quick Link</h3>
-            <p className="mb-2">Privacy Policy</p>
-            <p className="mb-2">Terms Of Use</p>
-            <p className="mb-2">FAQ</p>
-            <p className="mb-2">Contact</p>
+            <Link to="" className="mb-2">
+              Privacy Policy
+            </Link>
+            <Link to="" className="mb-2">
+              Terms Of Use
+            </Link>
+            <Link to="" className="mb-2">
+              FAQ
+            </Link>
+            <Link to="/contact" className="mb-2">
+              Contact
+            </Link>
           </div>
 
           {/* Download App */}

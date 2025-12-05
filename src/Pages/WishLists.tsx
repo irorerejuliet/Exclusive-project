@@ -1,9 +1,10 @@
 import React from 'react'
+import WishlistsProducts from '../Components/wishLists/WishlistsProducts'
 
 const WishLists = () => {
   return (
-    <div>
-      
+    <div className='wrapper'>
+      <WishlistsProducts/>
     </div>
   )
 }

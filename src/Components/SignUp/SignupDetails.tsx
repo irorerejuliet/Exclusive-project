@@ -34,7 +34,7 @@ const {
   return (
     <div className="flex justify-between  items-center  my-28 ">
       <div className=''>
-        <img src="/images/beatsnoop.svg" alt="beatsnoop" />
+        <img src="/images/beatsnoop.svg" alt="beatsnoop" className='w-[805px]'/>
       </div>
       <div className=" space-y-10 pr-64">
         <h4 className="text-3xl font-medium">Create an account</h4>
