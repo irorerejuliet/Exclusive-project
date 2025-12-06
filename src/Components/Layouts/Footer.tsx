@@ -50,7 +50,7 @@ const Footer = () => {
               <Link to="/login" className="mb-2">
                 Login / Signup
               </Link>
-              <Link to="" className="mb-2">
+              <Link to="/cart" className="mb-2">
                 Cart
               </Link>
               <Link to="/wishlists" className="mb-2">
