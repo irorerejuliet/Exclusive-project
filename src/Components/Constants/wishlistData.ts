@@ -31,3 +31,45 @@ export const wishlistData: wishlistTypes[] = [
   },
 ];
 
+
+
+
+
+export const justForYouData = [
+  {
+    id: 1,
+    quickVeiw: "/images/Quick View.svg",
+    image: "/images/GamingLaptop.svg",
+    description: "ASUS FHD Gaming Laptop",
+    amount: ["$120", "$160"],
+    stars: "/images/Five star.svg",
+    rating: 65,
+  },
+  {
+    id: 2,
+    quickVeiw: "/images/Quick View.svg",
+    image: "/images/GamingMonitor.svg",
+    description: "IPS LCD Gaming Monitor",
+    amount: ["$120", "$160"],
+    stars: "/images/Five star.svg",
+    rating: 65,
+  },
+  {
+    id: 3,
+    quickVeiw: "/images/Quick View.svg",
+    image: "/images/GamePad.svg",
+    description: "RGB liquid CPU Cooler",
+    amount: ["$120", "$160"],
+    stars: "/images/Five star.svg",
+    rating: 75,
+  },
+  {
+    id: 4,
+    quickVeiw: "/images/Quick View.svg",
+    image: "public/images/KeyBoard.svg",
+    description: "AK-900 Wired Keyboard",
+    amount: ["$120", "$160"],
+    stars: "/images/Five star.svg",
+    rating: 75,
+  },
+];
