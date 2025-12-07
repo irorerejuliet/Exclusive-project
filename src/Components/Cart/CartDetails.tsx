@@ -12,7 +12,7 @@ const CartDetails = () => {
       </div>
       <div className="p-8 font-sans">
         {/* HEADER ROW */}
-        <div className="grid grid-cols-4 font-semibold bg-gray-100 p-4 border-b">
+        <div className="grid grid-cols-4 font-semibold bg-gray-100 p-4 ">
           <div>Product</div>
           <div>Price</div>
           <div>Quantity</div>
@@ -20,31 +20,35 @@ const CartDetails = () => {
         </div>
 
         {/* ITEM 1 */}
-        <div className="grid grid-cols-4 items-center p-4 border-b">
+        <div className="grid grid-cols-4 items-center p-4 border-gray-100 shadow my-5">
           <div className="flex items-center gap-3">
             <img src="/images/LCD Monitor.svg" alt="Monitor" className="w-16" />
             <span>LCD Monitor</span>
           </div>
           <div>$650</div>
-          <div>
-            <select className="border rounded p-2">
-              <option>01</option>
-            </select>
+          <div className="flex items-center gap-2 border rounded p-2 w-[58px]">
+            <span>02</span>
+            <div>
+              <img src="/images/drop-up.svg" alt="" className="ml-1" />
+              <img src="/images/Drop-Down-Small.svg" alt="" />
+            </div>
           </div>
           <div>$650</div>
         </div>
 
         {/* ITEM 2 */}
-        <div className="grid grid-cols-4 items-center p-4 border-b">
+        <div className="grid grid-cols-4 items-center p-4 border border-gray-100 shadowl my-5">
           <div className="flex items-center gap-3">
             <img src="/images/GamePad.svg" alt="Gamepad" className="w-16" />
             <span>H1 Gamepad</span>
           </div>
           <div>$550</div>
-          <div>
-            <select className="border rounded p-2">
-              <option>02</option>
-            </select>
+          <div className="flex items-center gap-2 border rounded p-2 w-[58px]">
+            <span>02</span>
+            <div>
+              <img src="/images/drop-up.svg" alt="" className="ml-1" />
+              <img src="/images/Drop-Down-Small.svg" alt="" />
+            </div>
           </div>
           <div>$1100</div>
         </div>
@@ -60,7 +64,7 @@ const CartDetails = () => {
         </div>
 
         {/* COUPON */}
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between">
           <div className="flex items-center gap-3 mb-10">
             <input
               type="text"
@@ -73,7 +77,7 @@ const CartDetails = () => {
           </div>
 
           {/* CART TOTAL */}
-          <div className="border w-80 p-6 rounded">
+          <div className="border w-80 p-6 rounded mt-28">
             <h3 className="text-xl mb-4 font-semibold">Cart Total</h3>
             <div className="flex justify-between py-3">
               <span>Subtotal:</span>

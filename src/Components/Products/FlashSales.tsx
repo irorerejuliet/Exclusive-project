@@ -9,7 +9,7 @@ const FlashSales = () => {
         <p className="text-[#DB4444] text-base font-semibold">Today's</p>
       </div>
       <SalesTime />
-      <div className="flex-row md:flex justify-between items-center gap-10 space-y-10 md:space-y-0">
+      <div className="flex-row md:flex justify-between items-center gap-10 space-y-10 md:space-y-0 md:px-0 px-10">
         {salesData.map(
           ({
             id,
@@ -61,7 +61,7 @@ const FlashSales = () => {
           )
         )}
       </div>
-      <button className="text-white bg-[#DB4444] text-base font-medium px-10 py-4 rounded-md my-16 w-[234px]">
+      <button className="text-white bg-[#DB4444] text-base font-medium px-10 py-4 rounded-md my-16 w-[234px] md:mx-0 mx-10">
         View All Products
       </button>
       <div className="w-full border-t border-gray-200"></div>

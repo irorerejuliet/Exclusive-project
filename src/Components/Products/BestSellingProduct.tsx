@@ -11,7 +11,7 @@ const BestSellingProduct = () => {
         <h4 className="md:text-3xl font-semibold">Best Selling Products</h4>
         <button className="text-white bg-[#DB4444] md:py-3 py-1 px-2 md:px-5 rounded-md md:w-[159px] w-20">View All</button>
       </div>
-      <div className="grid md:grid-cols-4 grid-cols-1  justify-between items-center gap-10 space-y-10 md:space-y-0">
+      <div className="grid md:grid-cols-4 grid-cols-1  justify-between items-center gap-10 space-y-10 md:space-y-0 md:px-0 px-10">
         {bestSellingProductData.map(
           ({
             id,

@@ -14,11 +14,11 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className="w-full bg-black text-white py-12 ">
-      <section className="wrapper md:py-0 py-5">
+      <section className="wrapper md:py-0 py-5 md:px-0 px-6">
         <div className="grid grid-cols-1 md:grid-cols-5 ">
           {/* Exclusive */}
           <div>
-            <h1 className="text-2xl font-bold">Exclusive</h1>
+            <Link to="/" className="text-2xl font-bold">Exclusive</Link>
             <p className="mb-3 text-xl">Subscribe</p>
             <p className="mb-4">Get 10% off your first order</p>
             <div className="flex items-center border border-white rounded-lg p-2 w-full max-w-xs justify-between">
@@ -44,7 +44,7 @@ const Footer = () => {
           <div className="text-white">
             <h3 className="text-xl font-semibold mb-4">Account</h3>
             <div className="flex flex-col">
-              <Link to="" className="mb-2">
+              <Link to="/account" className="mb-2">
                 My Account
               </Link>
               <Link to="/login" className="mb-2">

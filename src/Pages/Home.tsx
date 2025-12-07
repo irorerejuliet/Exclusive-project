@@ -9,7 +9,7 @@ import NewArrival from "../Components/Products/NewArrival";
 
 const Home = () => {
   return (
-    <main className="wrapper">
+    <main className="wrapper md:px-0 px-4">
       <HeroSection />
       <FlashSales />
       <Categories />

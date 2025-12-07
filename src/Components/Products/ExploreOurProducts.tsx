@@ -63,7 +63,7 @@ const ExploreOurProducts = () => {
           />
         </div>
       </div>
-      <div className="flex-row md:flex justify-between items-center gap-10 space-y-10 md:space-y-0 ">
+      <div className="flex-row md:flex justify-between items-center gap-10 space-y-10 md:space-y-0 md:px-0 px-10">
         {exploreOurProductData.map(
           ({
             id,
