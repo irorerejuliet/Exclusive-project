@@ -103,7 +103,7 @@ const AccountDetails = () => {
             />
             <div className="flex justify-end items-center gap-5 pt-8">
               <p className="text-base font-medium">Cancel</p>
-              <button className="text-base font-medium bg-primary text-white w-[214px] py-2 px-4 rounded-4">
+              <button className="text-base font-medium bg-primary rounded-4 text-white w-[214px] py-2 px-4 ">
                 Save Changes
               </button>
             </div>

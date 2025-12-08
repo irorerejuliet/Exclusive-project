@@ -20,7 +20,7 @@ const Navbar = () => {
         {/* Search + Icons */}
         <div className="hidden md:flex gap-4 items-center">
           <div className="flex gap-1 border border-gray-200 shadow rounded-md py-2 px-4">
-            <input type="text" placeholder="What are looking for" />
+            <input type="text" placeholder="What are looking for " />
             <img src="/images/SearchIcon.svg" alt="searchIcon" />
           </div>
           <div className="flex gap-4">
