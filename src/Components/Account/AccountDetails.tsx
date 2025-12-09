@@ -31,7 +31,7 @@ const AccountDetails = () => {
               </p>
             </div>
           </div>
-          <div className='pb-4'>
+          <div className="pb-4">
             <h4 className="text-base font-medium py-2">My Orders</h4>
             <div className="ml-6 space-y-1">
               <p className="text-base font-normal text-[#B0B0B0]">My Returns</p>
@@ -44,10 +44,12 @@ const AccountDetails = () => {
         </div>
 
         {/* Edit Profile */}
-        <div className='shadow-md w-[870px] p-10'>
-          <h4 className="text-xl text-primary font-medium">Edit Your Profile</h4>
+        <div className="shadow-md w-[870px] p-10">
+          <h4 className="text-xl text-primary font-medium">
+            Edit Your Profile
+          </h4>
           <div className="flex gap-10">
-            <div className='space-y-6'>
+            <div className="space-y-6">
               <div className="">
                 <label htmlFor="name">First Name</label>
                 <input
@@ -65,7 +67,7 @@ const AccountDetails = () => {
                 />
               </div>
             </div>
-            <div className='space-y-6'>
+            <div className="space-y-6">
               <div>
                 <label htmlFor="name">Email</label>
                 <input
@@ -84,22 +86,22 @@ const AccountDetails = () => {
               </div>
             </div>
           </div>
-          <div className='pt-10'>
-            <h4 className='pb-4'>Password Changes</h4>
+          <div className="pt-10">
+            <h4 className="pb-4">Password Changes</h4>
             <input
               type="text"
               placeholder="Current Password"
-              className="shadow bg-[#F5F5F5] py-2 px-4 w-full rounded-4"
+              className="shadow bg-[#F5F5F5] py-2 px-4 w-full rounded-4 focus:outline-none"
             />
             <input
               type="text"
               placeholder="Current Password"
-              className="shadow bg-[#F5F5F5] py-2 px-4 w-full rounded-4 my-4"
+              className="shadow bg-[#F5F5F5] py-2 px-4 w-full rounded-4 my-4 focus:outline-none"
             />
             <input
               type="text"
               placeholder="Current Password"
-              className="shadow bg-[#F5F5F5] py-2 px-4 w-full rounded-4"
+              className="shadow bg-[#F5F5F5] py-2 px-4 w-full rounded-4  focus:outline-none"
             />
             <div className="flex justify-end items-center gap-5 pt-8">
               <p className="text-base font-medium">Cancel</p>
@@ -113,5 +115,10 @@ const AccountDetails = () => {
     </div>
   );
 }
+            <input
+              type="text"
+              placeholder="What are looking for "
+              className="focus:outline-none"
+            />;
 
 export default AccountDetails

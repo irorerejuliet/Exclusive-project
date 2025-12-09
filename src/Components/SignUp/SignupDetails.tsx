@@ -13,17 +13,18 @@ type SignupFormData = z.infer<typeof signupSchema>;
 const SignupDetails = () => {
 
 const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<SignupFormData>({
-    resolver: zodResolver(signupSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      password: "",
-    },
-  });
+  register,
+  handleSubmit,
+  formState: { errors },
+} = useForm<SignupFormData>({
+  resolver: zodResolver(signupSchema),
+  defaultValues: {
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  },
+});
 
 
   const onSubmit = (data: SignupFormData) => {
@@ -34,8 +35,12 @@ const {
 
   return (
     <div className="flex justify-between  items-center  my-28 ">
-      <div className=''>
-        <img src="/images/beatsnoop.svg" alt="beatsnoop" className='w-[805px]'/>
+      <div className="">
+        <img
+          src="/images/beatsnoop.svg"
+          alt="beatsnoop"
+          className="w-[805px]"
+        />
       </div>
       <div className=" space-y-10 pr-64">
         <h4 className="text-3xl font-medium">Create an account</h4>
@@ -44,7 +49,12 @@ const {
           className="flex flex-col space-y-8 "
           onSubmit={handleSubmit(onSubmit)}
         >
-          <CustomInput type="text" placeholder="Name" />
+          <CustomInput
+            type="text"
+            placeholder="Name"
+            register={register("name")}
+            error={errors.name}
+          />
           <CustomInput
             type="text"
             placeholder="Email or Phone Number"
@@ -56,6 +66,12 @@ const {
             placeholder="Password"
             register={register("password")}
             error={errors.password}
+          />
+          <CustomInput
+            type="password"
+            placeholder="Confirm Password"
+            register={register("confirmPassword")}
+            error={errors.confirmPassword}
           />
 
           <button className="text-white bg-primary rounded-md py-3 px-7 hover:bg-blue-500">

@@ -6,7 +6,7 @@ export const bestSellingProductData = [
     image: "/images/NorthCoat.svg",
     description: "The north coat",
     amount: ["$120", "$160"],
-    stars: "/images/Five star.svg",
+    stars: 5,
     rating: 65,
   },
   {
@@ -16,7 +16,7 @@ export const bestSellingProductData = [
     image: "/images/GucciBag.svg",
     description: "Gucci duffle bag",
     amount: ["$120", "$160"],
-    stars: "/images/Five star.svg",
+    stars: 4,
     rating: 65,
   },
   {
@@ -26,7 +26,7 @@ export const bestSellingProductData = [
     image: "/images/LiquidCpuCooler.svg",
     description: "RGB liquid CPU Cooler",
     amount: ["$120", "$160"],
-    stars: "/images/Five star.svg",
+    stars: 5,
     rating: 75,
   },
   {
@@ -36,7 +36,7 @@ export const bestSellingProductData = [
     image: "/images/SmallBookShop.svg",
     description: "Small BookSelf",
     amount: ["$120", "$160"],
-    stars: "/images/Five star.svg",
+    stars: 4,
     rating: 75,
   },
 ];

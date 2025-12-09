@@ -1,4 +1,6 @@
+import { FaStar } from "react-icons/fa";
 import { bestSellingProductData } from "../Constants/bestSellingProductData";
+
 
 const BestSellingProduct = () => {
   return (
@@ -9,7 +11,9 @@ const BestSellingProduct = () => {
       </div>
       <div className="flex justify-between items-center mb-7">
         <h4 className="md:text-3xl font-semibold">Best Selling Products</h4>
-        <button className="text-white bg-[#DB4444] md:py-3 py-1 px-2 md:px-5 rounded-md md:w-[159px] w-20">View All</button>
+        <button className="text-white bg-[#DB4444] md:py-3 py-1 px-2 md:px-5 rounded-md md:w-[159px] w-20">
+          View All
+        </button>
       </div>
       <div className="grid md:grid-cols-4 grid-cols-1  justify-between items-center gap-10 space-y-10 md:space-y-0 md:px-0 px-10">
         {bestSellingProductData.map(
@@ -20,8 +24,8 @@ const BestSellingProduct = () => {
             image,
             description,
             amount,
-            stars,
             rating,
+            stars,
           }) => (
             <div key={id} className="w-[270px] ">
               {/* Card */}
@@ -41,7 +45,23 @@ const BestSellingProduct = () => {
                   {amount}
                 </p>
                 <div className="flex items-center gap-2 mt-1">
-                  <img src={stars} alt="rating" />
+                  {/* <img src={stars} alt="rating" /> */}
+                  {stars === 5 ? (
+                    <>
+                      <FaStar className="text-yellow-500" />
+                      <FaStar className="text-yellow-500" />
+                      <FaStar className="text-yellow-500" />
+                      <FaStar className="text-yellow-500" />
+                      <FaStar className="text-yellow-500" />
+                    </>
+                  ) : (
+                    <>
+                      <FaStar className="text-yellow-500" />
+                      <FaStar className="text-yellow-500" />
+                      <FaStar className="text-yellow-500" />
+                      <FaStar className="text-yellow-500" />
+                    </>
+                  )}
                   <span className="text-gray-500">{rating}</span>
                 </div>
               </div>
