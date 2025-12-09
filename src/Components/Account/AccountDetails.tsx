@@ -95,12 +95,12 @@ const AccountDetails = () => {
             />
             <input
               type="text"
-              placeholder="Current Password"
+              placeholder="New Password"
               className="shadow bg-[#F5F5F5] py-2 px-4 w-full rounded-4 my-4 focus:outline-none"
             />
             <input
               type="text"
-              placeholder="Current Password"
+              placeholder="Comfirm Password"
               className="shadow bg-[#F5F5F5] py-2 px-4 w-full rounded-4  focus:outline-none"
             />
             <div className="flex justify-end items-center gap-5 pt-8">
