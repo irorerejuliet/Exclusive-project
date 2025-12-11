@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { sidebarList } from "../Constants/sidebarList";
 
 const Sidebar = () => {
@@ -8,7 +9,7 @@ const Sidebar = () => {
           key={index}
           className="flex justify-between items-center py-3 text-[16px] cursor-pointer hover:text-black/70"
         >
-          <p>{item}</p>
+          <Link to={item.path}>{item.name}</Link>
 
           {/* This shows the first two items with arrows */}
           {index < 2 && (
