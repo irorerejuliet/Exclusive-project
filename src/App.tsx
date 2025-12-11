@@ -10,6 +10,7 @@ import WishLists from "./Pages/WishLists";
 import Cart from "./Pages/Cart";
 import Account from "./Pages/Account";
 import WomenFashion from "./Pages/WomenFashion";
+import MenFashion from "./Pages/MenFashion";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="cart" element={<Cart />} />
           <Route path="account" element={<Account />} />
           <Route path="womenfashion" element={<WomenFashion />} />
+          <Route path="menfashion" element={<MenFashion />} />
         </Route>
       </Routes>
       <Footer />
