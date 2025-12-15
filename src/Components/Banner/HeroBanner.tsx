@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
+
 const HeroBanner = () => {
+  
   return (
     <div className="flex-1  bg-black w-[892px] text-white rounded-sm px-20 py-20 relative overflow-hidden md:block  hidden">
       <div className=" space-y-3">
@@ -18,19 +19,11 @@ const HeroBanner = () => {
         </button>
       </div>
 
-      <motion.img
+      <img
         src="/images/Hero-Image.svg"
         alt="hero"
         className="absolute right-0 top-1/2 -translate-y-1/2"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{
-          opacity: 1,
-          y: ["0%", "-3%", "0%"],
-        }}
-        transition={{
-          opacity: { duration: 0.8 },
-          y: { repeat: Infinity, duration: 4, ease: "easeInOut" },
-        }}
+        
       />
 
       {/* Loading */}
