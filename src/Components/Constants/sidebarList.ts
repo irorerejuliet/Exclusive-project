@@ -8,4 +8,5 @@ export const sidebarList = [
   { name: "Baby's & Toys", path: "/babies-toys" },
   { name: "Groceries & Pets", path: "/groceries-pets" },
   { name: "Health & Beauty", path: "/health-beauty" },
+  { name: "ProductDetails Page", path: "/health-beauty" }
 ];

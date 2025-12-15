@@ -11,6 +11,7 @@ import Cart from "./Pages/Cart";
 import Account from "./Pages/Account";
 import WomenFashion from "./Pages/WomenFashion";
 import MenFashion from "./Pages/MenFashion";
+import ProductDetails from "./Pages/ProductDetails";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="account" element={<Account />} />
           <Route path="womenfashion" element={<WomenFashion />} />
           <Route path="menfashion" element={<MenFashion />} />
+          <Route path="productdetails" element={<ProductDetails />} />
         </Route>
       </Routes>
       <Footer />
