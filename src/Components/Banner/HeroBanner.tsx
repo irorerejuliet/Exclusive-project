@@ -9,7 +9,7 @@ const HeroBanner = () => {
     "/images/iphone2.jpeg",
     "/images/phone1.jpeg",
     "/images/iphone13.png",
-    "/images/phone5.jpeg",
+    "/images/phone5.png",
   ];
 
   
@@ -35,7 +35,7 @@ const HeroBanner = () => {
       <img
         src={heroImages[activeIndex]}
         alt="hero"
-        className="absolute right-40 top-1/2 -translate-y-1/2 transition-all duration-500 w-[350px]"
+        className="absolute right-40 top-1/2 -translate-y-1/2 transition-all duration-500 w-[450px]"
       />
 
       {/* Loading Dots */}

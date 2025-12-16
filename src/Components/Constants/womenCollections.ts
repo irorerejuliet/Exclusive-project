@@ -7,13 +7,13 @@ export const womenCollections = [
   },
   {
     id: 2,
-    image: "/images/lady2.png",
+    image: "/images/lady13.png",
     title: "Product 2",
     price: 29.0,
   },
   {
     id: 3,
-    image: "/images/lady3.jpeg",
+    image: "/images/laddy2.png",
     title: "Product 3",
     price: 29.0,
   },
