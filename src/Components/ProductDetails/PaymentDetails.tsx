@@ -5,7 +5,7 @@ import { BiHeart } from 'react-icons/bi';
 const PaymentDetails = () => {
     const [qty, setQty] = useState(2);
   return (
-    <div className="max-w-sm font-sans space-y-4">
+    <div className="max-w-sm font-sans space-y-4 wrapper">
       <h2 className="text-xl font-semibold">Havic HV G-92 Gamepad</h2>
 
       <div className="flex items-center gap-2 text-sm">

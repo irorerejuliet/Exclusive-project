@@ -4,7 +4,7 @@ import { formatCurrency } from "../../helper/formatCurrency";
 
 const Details = () => {
   return (
-    <div className="my-40">
+    <div className="my-40 wrapper">
       <div className="flex gap-4 items-center">
         <div className="bg-[#DB4444] w-4 h-10 rounded-[5px]"></div>
         <p className="text-[#DB4444] text-base font-semibold">Today's</p>
