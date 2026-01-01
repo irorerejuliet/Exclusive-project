@@ -5,7 +5,7 @@ import { FaInstagram, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
 
 const Founders = () => {
   return (
-    <div className="flex justify-between  items-center gap-10 wrapper">
+    <div className="lg:flex flex-row justify-between  items-center gap-10 wrapper">
       {foundersData.map(({ id, image, title, subTitle }) => (
         <div key={id}>
           <div className="w-[370px] bg-[#F5F5F5] pt-6 ">

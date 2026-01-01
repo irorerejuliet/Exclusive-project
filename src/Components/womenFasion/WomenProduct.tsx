@@ -6,7 +6,7 @@ import { FaStar } from 'react-icons/fa';
 const WomenProduct = () => {
   return (
     <div className="wrapper  py-20">
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid md:grid-cols-4 grid-cols-1 gap-4 md:px-0 px-4">
         {womenCollections.map(({ id, title, image, price }) => (
           
           <div className="bg-white p-4 shadow rounded relative border border-gray-200 transform transition-transform duration-300 hover:scale-105" key={id}>
