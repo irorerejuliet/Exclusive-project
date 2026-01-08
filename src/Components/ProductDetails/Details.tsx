@@ -37,6 +37,11 @@ const Details = () => {
                   <img src={gamepad} alt="GamePad" className="h-24 w-auto" />
                 </div>
               </div>
+              {id === 2 && (
+                <button className="text-white bg-black w-[270px] py-2 rounded-sm">
+                  Add to cart{" "}
+                </button>
+              )}
               {/* Product info below card */}
               <div className="mt-4 w-[210px]">
                 <p className="font-semibold text-lg">{description}</p>
@@ -61,7 +66,7 @@ const Details = () => {
           )
         )}
       </div>
-      <button className="text-white bg-[#DB4444] text-base font-medium px-10 py-4 rounded-md my-16 w-[234px] md:mx-0 mx-10">
+      <button className="text-white bg-secondary text-base font-medium px-10 py-4 rounded-md my-16 w-[234px] md:mx-0 mx-10">
         View All Products
       </button>
       <div className="w-full border-t border-gray-200"></div>
