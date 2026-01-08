@@ -1,5 +1,5 @@
 
-import React from 'react'
+
 import { foundersData } from '../Constants/aboutData';
 import { FaInstagram, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
 

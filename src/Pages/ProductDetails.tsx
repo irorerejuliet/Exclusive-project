@@ -1,11 +1,12 @@
 import React from 'react'
 import Details from '../Components/ProductDetails/Details'
-import PaymentDetails from '../Components/ContactDetails/PaymentDetails'
+import PaymentDetails from '../Components/ProductDetails/PaymentDetails'
+
 
 const ProductDetails = () => {
   return (
     <div>
-        <PaymentDetails/>
+      <PaymentDetails/>
       <Details/>
     </div>
   )
