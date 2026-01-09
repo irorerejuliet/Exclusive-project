@@ -23,7 +23,7 @@ const FlashSales = () => {
             rating,
             discounted_price,
           }) => (
-            <div key={id} className="w-[270px] ">
+            <div key={id} className="w-[270px]">
               {/* Card */}
               <div className="relative bg-[#F5F5F5] shadow rounded-xl p-4">
                 <button className="absolute top-3 left-3 bg-primary text-white py-1 px-2 rounded-md">
@@ -37,6 +37,11 @@ const FlashSales = () => {
                   <img src={gamepad} alt="GamePad" className="h-24 w-auto" />
                 </div>
               </div>
+              {id === 2 && (
+                <button className="text-white bg-black w-[270px] py-2 rounded-t-none rounded-b-sm">
+                  Add to cart{" "}
+                </button>
+              )}
               {/* Product info below card */}
               <div className="mt-4 w-[210px]">
                 <p className="font-semibold text-lg">{description}</p>

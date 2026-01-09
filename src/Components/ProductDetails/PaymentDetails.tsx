@@ -26,8 +26,8 @@ const PaymentDetails = () => {
         <span className="text-[#BFBFBF] text-base font-medium">/</span>
         <p className="text-base font-medium">Havic HV G-92 Gamepad</p>
       </div>
-      <div className="flex justify-between">
-        <div className=" w-[171px] space-y-3">
+      <div className="flex flex-col md:flex-row md:justify-between gap-8">
+        <div className=" w-[171px] md:mx-0 mx-auto space-y-3">
           {images.map((image, index) => (
             <div
               key={`${image}-${index}`}
@@ -35,13 +35,14 @@ const PaymentDetails = () => {
               role="button"
               onClick={() => setCurrentImage(image)}
             >
-              <img src={image} alt="gampad"  />
+              <img src={image} alt="gampad" />
             </div>
           ))}
         </div>
-        <div className="w-[500px] h-[600px] bg-[#F5F5F5] pt-[154px] pb-[131px] px-[27px] rounded-sm">
+        <div className="md:w-[500px] w-[300px] md:mx-0 mx-auto md:h-[600px] h-[450px]  bg-[#F5F5F5] pt-[154px] pb-[131px] px-[27px] rounded-sm md:mt-0 my-8">
           <img src={currentImage} alt="gamepad" className="w-full h-full" />
         </div>
+        {/* Payment and delivery section */}
         <div className="max-w-sm font-sans space-y-4 ">
           <h2 className="text-2xl font-semibold">Havic HV G-92 Gamepad</h2>
 
@@ -53,7 +54,7 @@ const PaymentDetails = () => {
 
           <p className="text-2xl font-medium">$192.00</p>
 
-          <p className="text-sm font-medium">
+          <p className="md:text-sm text-xs font-medium">
             PlayStation 5 Controller Skin High quality vinyl with air channel
             adhesive for easy bubble free install & mess free removal Pressure
             sensitive.
@@ -109,7 +110,11 @@ const PaymentDetails = () => {
 
           <div className="border rounded p-4 space-y-3 text-sm w-[399px]">
             <div className="flex gap-3 items-start">
-              <img src="/images/DelivryIcon.svg" alt="delivryIcon" className="w-[26px]"/>
+              <img
+                src="/images/DelivryIcon.svg"
+                alt="delivryIcon"
+                className="w-[26px]"
+              />
               <div>
                 <p className="font-medium">Free Delivery</p>
                 <p className="text-gray-500">
@@ -121,7 +126,13 @@ const PaymentDetails = () => {
             <hr />
 
             <div className="flex gap-3 items-start">
-              <span><img src="/images/ReturnIcon.svg" alt="returnIcon" className="w-[26px]"/></span>
+              <span>
+                <img
+                  src="/images/ReturnIcon.svg"
+                  alt="returnIcon"
+                  className="w-[26px]"
+                />
+              </span>
               <div>
                 <p className="font-medium">Return Delivery</p>
                 <p className="text-gray-500">
