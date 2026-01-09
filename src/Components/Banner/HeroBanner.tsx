@@ -5,8 +5,8 @@ const HeroBanner = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const heroImages = [
-    "/images/Hero-Image.svg",
-    "/images/iphone2.jpeg",
+    "/images/phone5.png",
+    "/images/iphone1.jpeg",
     "/images/phone1.jpeg",
     "/images/iphone13.png",
     "/images/phone5.png",
