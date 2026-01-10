@@ -1,35 +1,26 @@
-
-import React, { useEffect, useState } from 'react'
-import { womenCollections } from '../Constants/womenCollections'
-
-
-
-
- 
+import React, { useEffect, useState } from "react";
+import { womenCollections } from "../Constants/womenCollections";
 
 const WomenProduct = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    const getWomenCollection = async () => {
+      try {
+        const response = await fetch(
+          "https://dummyjson.com/products/category-list"
+        );
+        const data = await response.json();
+        console.log(data.products);
+        setProducts(data.products);
+      } catch (error) {
+        console.log(error);
+      }
+    };
 
- useEffect(() =>{
-const getWomenCollection = async () => {
-  try {
-    const response = await fetch(
-      "https://dummyjson.com/products/category/${category"
-    );
-    const data = await response.json();
-    console.log(data.products);
-     setProducts(data.products);
-  } catch (error) {
-    console.log(error);
-   ;
-
-  }
-}
-
-getWomenCollection()
- }, [])
+    getWomenCollection();
+  }, []);
   return (
     <div className="wrapper  py-20">
       <div className="grid md:grid-cols-4 grid-cols-1 gap-4 md:px-0 px-4">
@@ -73,6 +64,6 @@ getWomenCollection()
       </div>
     </div>
   );
-}
+};
 
-export default WomenProduct
+export default WomenProduct;

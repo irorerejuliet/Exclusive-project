@@ -1,5 +1,5 @@
 import HeroBanner from "./HeroBanner";
-import Sidebar from "./Sidebar";
+import Sidebar from "./CategoryProducts";
 
 const HeroSection = () => {
   return (

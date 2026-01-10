@@ -9,9 +9,8 @@ import Login from "./Pages/Login";
 import WishLists from "./Pages/WishLists";
 import Cart from "./Pages/Cart";
 import Account from "./Pages/Account";
-import WomenFashion from "./Pages/WomenFashion";
-import MenFashion from "./Pages/MenFashion";
 import ProductDetails from "./Pages/ProductDetails";
+import CategoryProducts from "./Components/Banner/CategoryProducts";
 
 function App() {
   return (
@@ -27,9 +26,11 @@ function App() {
           <Route path="wishlists" element={<WishLists />} />
           <Route path="cart" element={<Cart />} />
           <Route path="account" element={<Account />} />
-          <Route path="womenfashion" element={<WomenFashion />} />
-          <Route path="menfashion" element={<MenFashion />} />
-          <Route path="productdetails" element={<ProductDetails />} />
+          {/* ✅ Dynamic category route */}
+          <Route path="category/:category" element={<CategoryProducts />} />
+
+          {/* Product details */}
+          <Route path="product/:id" element={<ProductDetails />} />
         </Route>
       </Routes>
       <Footer />
