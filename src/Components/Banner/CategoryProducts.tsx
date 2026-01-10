@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 const CategoryProducts = () => {
   const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(true)
   const visibleCategories = categories.slice(0, 10);
 
   useEffect(() => {
@@ -13,6 +14,7 @@ const CategoryProducts = () => {
         const data = await res.json();
         console.log(data);
         setCategories(data);
+        setLoading(false)
       } catch (error) {
         console.log(error);
       }
@@ -21,6 +23,7 @@ const CategoryProducts = () => {
   }, []);
   return (
     <div className="w-[217px] border-r pr-6">
+      {loading && <p>Loading....</p>}
       {visibleCategories.map((categories, index) => (
         <div
           key={index}

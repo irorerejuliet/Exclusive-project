@@ -7,6 +7,8 @@ const HeroSection = () => {
       <Sidebar />
       <HeroBanner />
     </div>
+    //  ◀
+      // ▶
   );
 };
 

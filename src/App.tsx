@@ -26,9 +26,8 @@ function App() {
           <Route path="wishlists" element={<WishLists />} />
           <Route path="cart" element={<Cart />} />
           <Route path="account" element={<Account />} />
-          {/* ✅ Dynamic category route */}
+          {/* Dynamic category route */}
           <Route path="category/:category" element={<CategoryProducts />} />
-
           {/* Product details */}
           <Route path="product/:id" element={<ProductDetails />} />
         </Route>

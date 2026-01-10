@@ -1,6 +1,15 @@
 import { useState } from "react";
-
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 const HeroBanner = () => {
+   const settings = {
+     dots: true,
+     infinite: true,
+     speed: 500,
+     slidesToShow: 1,
+     slidesToScroll: 1,
+   };
 
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -31,24 +40,28 @@ const HeroBanner = () => {
         </button>
       </div>
 
-      {/* Hero Image */}
-      <img
-        src={heroImages[activeIndex]}
-        alt="hero"
-        className="absolute right-40 top-1/2 -translate-y-1/2 transition-all duration-500 w-[450px]"
-      />
-
-      {/* Loading Dots */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-        {heroImages.map((_, index) => (
-          <div
-            key={index}
-            onClick={() => setActiveIndex(index)}
-            className={`w-3 h-3 rounded-full cursor-pointer transition-all
-              ${activeIndex === index ? "bg-[#FF0000]" : "bg-gray-500"}`}
+      <Slider {...settings}>
+        <div className="relative">
+          {/* Hero Image */}
+          <img
+            src={heroImages[activeIndex]}
+            alt="hero"
+            className="absolute right-40 bottom-6  w-[450px]"
           />
-        ))}
-      </div>
+
+          {/* Loading Dots */}
+          <div className="absolute bottom-1 left-1/2 -translate-x-1/2 flex gap-2">
+            {heroImages.map((_, index) => (
+              <div
+                key={index}
+                onClick={() => setActiveIndex(index)}
+                className={`w-3 h-3 rounded-full cursor-pointer transition-all
+              ${activeIndex === index ? "bg-[#FF0000]" : "bg-gray-500"}`}
+              />
+            ))}
+          </div>
+        </div>
+      </Slider>
     </div>
   );
 };

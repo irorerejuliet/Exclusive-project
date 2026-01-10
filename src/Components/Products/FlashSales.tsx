@@ -1,6 +1,7 @@
 import { salesData } from "../Constants/salesData";
 import SalesTime from "./SalesTime";
 import { formatCurrency } from "../../helper/formatCurrency";
+import { Link } from "react-router-dom";
 const FlashSales = () => {
   return (
     <div className="my-40">
@@ -34,14 +35,19 @@ const FlashSales = () => {
                   <img src={quickVeiw} alt="quickview" />
                 </div>
                 <div className="flex justify-center my-6">
-                  <img src={gamepad} alt="GamePad" className="h-24 w-auto" />
+                  <Link to={`/product/${id}`}>
+                    <img src={gamepad} alt="GamePad" className="h-24 w-auto" />
+                  </Link>
                 </div>
               </div>
-              {id === 2 && (
+              <button className="text-white bg-black w-[270px] py-2 rounded-t-none rounded-b-sm">
+                Add to cart{" "}
+              </button>
+              {/* {id === 2 && (
                 <button className="text-white bg-black w-[270px] py-2 rounded-t-none rounded-b-sm">
                   Add to cart{" "}
                 </button>
-              )}
+              )} */}
               {/* Product info below card */}
               <div className="mt-4 w-[210px]">
                 <p className="font-semibold text-lg">{description}</p>

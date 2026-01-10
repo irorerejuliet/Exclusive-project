@@ -9,7 +9,7 @@ const WomenProduct = () => {
     const getWomenCollection = async () => {
       try {
         const response = await fetch(
-          "https://dummyjson.com/products/category-list"
+          "https://dummyjson.com/products/womens-dresses"
         );
         const data = await response.json();
         console.log(data.products);
