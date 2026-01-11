@@ -40,7 +40,7 @@ const FlashSales = () => {
                   </Link>
                 </div>
               </div>
-              <button className="text-white bg-primary hover:bg-black w-[270px] py-2 rounded-t-none rounded-b-sm transform transition-transform duration-300 hover:scale-105">
+              <button className="text-white bg-black w-[270px] py-2 rounded-t-none rounded-b-sm">
                 Add to cart
               </button>
               {/* Product info below card */}

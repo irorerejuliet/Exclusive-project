@@ -1,21 +1,11 @@
 import { useState } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-const HeroBanner = () => {
-   const settings = {
-     dots: true,
-     infinite: true,
-     speed: 500,
-     slidesToShow: 1,
-     slidesToScroll: 1,
-   };
 
+const HeroBanner = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const heroImages = [
     "/images/phone5.png",
-    "/images/iphone1.jpeg",
+    "/images/phone17.png",
     "/images/phone1.jpeg",
     "/images/iphone13.png",
     "/images/phone5.png",
@@ -40,17 +30,17 @@ const HeroBanner = () => {
         </button>
       </div>
 
-      <Slider {...settings}>
-        <div className="relative">
+     
+        <div className="">
           {/* Hero Image */}
           <img
             src={heroImages[activeIndex]}
             alt="hero"
-            className="absolute right-40 bottom-6  w-[450px]"
+            className="absolute right-40 bottom-10  w-[450px]"
           />
 
           {/* Loading Dots */}
-          <div className="absolute bottom-1 left-1/2 -translate-x-1/2 flex gap-2">
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
             {heroImages.map((_, index) => (
               <div
                 key={index}
@@ -61,7 +51,7 @@ const HeroBanner = () => {
             ))}
           </div>
         </div>
-      </Slider>
+     
     </div>
   );
 };
