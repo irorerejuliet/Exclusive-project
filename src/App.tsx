@@ -10,7 +10,7 @@ import WishLists from "./Pages/WishLists";
 import Cart from "./Pages/Cart";
 import Account from "./Pages/Account";
 import ProductDetails from "./Pages/ProductDetails";
-import CategoryProducts from "./Components/Banner/CategoryProducts";
+import ProductCategories from "./Pages/productCategories";
 
 function App() {
   return (
@@ -27,7 +27,7 @@ function App() {
           <Route path="cart" element={<Cart />} />
           <Route path="account" element={<Account />} />
           {/* Dynamic category route */}
-          <Route path="category/:category" element={<CategoryProducts />} />
+          <Route path="categories/:category" element={<ProductCategories />} />
           {/* Product details */}
           <Route path="product/:id" element={<ProductDetails />} />
         </Route>
