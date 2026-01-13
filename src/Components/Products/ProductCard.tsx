@@ -1,6 +1,25 @@
 import { Link } from "react-router-dom";
 import { formatCurrency } from "../../helper/formatCurrency";
 import type { Product } from "../../types/products";
+import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
+
+// function for rationg
+const productRating = (rating: number) => {
+  const stars = [];
+
+  for (let i = 1; i <= 5; i++){
+    if(rating>=1){
+      stars.push(<FaStar key={i} className="text-yellow-400" />)
+    } else if(rating >= 1 - 0.5){
+      stars.push(<FaStarHalfAlt key={i} className="text-yellow-400" />);
+    }else{
+      stars.push(<FaRegStar key={i} className="text-yellow-400" />)
+    }
+  }
+
+
+  return stars;
+};
 
 interface ProductCardProps {
   product: Product;
@@ -41,6 +60,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
         </div>
         <div className="flex items-center gap-2 mt-1">
           {/* <img src={stars} alt="rating" /> */}
+          <div className="flex">{productRating(rating)}</div>
           <span className="text-gray-500">{rating}</span>
         </div>
       </div>

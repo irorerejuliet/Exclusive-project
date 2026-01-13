@@ -14,10 +14,7 @@ const FlashSales = () => {
       <div className="flex-row md:flex justify-between items-center gap-10 space-y-10 md:space-y-0 md:px-0 px-10">
         {loading ? (
           <p>Loading products...</p>
-        ) : (
-          data?.products
-            ?.slice(0, 4)
-            .map((product) => (
+        ) : (data?.products?.slice(0, 4).map((product) => (
               <ProductCard key={product.id} product={product} />
             ))
         )}
