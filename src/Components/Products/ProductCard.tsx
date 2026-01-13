@@ -51,7 +51,6 @@ const ProductCard = ({ product }: ProductCardProps) => {
             {/* {discounted_price > 0
               ? formatCurrency(discounted_price)
               : formatCurrency(price)} */}
-            3
           </p>
 
           <p className="text-black/50 line-through flex gap-4 font-medium">
