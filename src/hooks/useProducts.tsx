@@ -5,22 +5,22 @@ const useProducts = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [data, setData] = useState<ProductApiResponse | null>(null);
 
-  
-  useEffect(() =>{
-    async function  fetchProducts(){
-      try{
- const res = await fetch("https://dummyjson.com/products");
- if (!res.ok) throw new Error("Unable to fetch data");
- const data = await res.json();
- setData(data);
-      } catch(error){
+  useEffect(() => {
+    async function fetchProducts() {
+      setLoading(true);
+      try {
+        const res = await fetch("https://dummyjson.com/products");
+        if (!res.ok) throw new Error("Unable to fetch data");
+        const data = await res.json();
+        setData(data);
+      } catch (error) {
         console.log(error);
-      }finally{
-        setLoading(false)
+      } finally {
+        setLoading(false);
       }
     }
     fetchProducts();
-  },[])
+  }, []);
 
   console.log(data);
   return {
@@ -30,14 +30,3 @@ const useProducts = () => {
 };
 
 export default useProducts;
-                                                       
-
-
-
-
-
-
-
-
-
-

@@ -1,7 +1,6 @@
 import useProducts from "../../hooks/useProducts";
 import ProductCard from "./ProductCard";
 import { shuffleArray } from "../../utils/shuffleArray";
-import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
 const ExploreOurProducts = () => {
@@ -32,23 +31,17 @@ const ExploreOurProducts = () => {
           />
         </div>
       </div>
-      <SkeletonTheme baseColor="#202020" highlightColor="#444">
-        <div className="flex-row md:flex justify-between items-center gap-10 space-y-10 md:space-y-0 md:px-0 px-10">
-          {loading ? (
-            <p>Loading products</p>
-          ) : (
-            products
-              .slice(1, 5)
-              .map((product) => (
-                <ProductCard key={product.id} product={product} />
-              ))
-          )}
-          <p>
-            {" "}
-            <Skeleton count={3} />
-          </p>
-        </div>
-      </SkeletonTheme>
+
+      <div className="flex-row md:flex justify-between items-center gap-10 space-y-10 md:space-y-0 md:px-0 px-10">
+        {loading && <p>Loading...</p>}
+        {products &&
+          !loading &&
+          products
+            .slice(1, 5)
+            .map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+      </div>
     </div>
   );
 };
