@@ -1,4 +1,5 @@
-import { Skeleton } from "";
+import { Skeleton } from "./skeleton";
+
 const CardSkeleton = () => {
   return (
     <div className="w-[270px] space-y-4">
