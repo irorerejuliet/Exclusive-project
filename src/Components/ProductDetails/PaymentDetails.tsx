@@ -1,9 +1,14 @@
-import React from "react";
+import { Product } from "@/types/products";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { BiHeart } from "react-icons/bi";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const PaymentDetails = () => {
+
+  const {productId} = useParams()
+  const {product SetProduct} = useState<Product: any[]/>()
+
   const images = [
     "/images/pad1.svg",
     "/images/pad2.svg",
@@ -12,6 +17,22 @@ const PaymentDetails = () => {
   ];
   const [currentImage, setCurrentImage] = useState(images[0]);
   const [qty, setQty] = useState(2);
+
+
+  useEffect(() => {
+    async function fetchproductById() {
+     try{
+ const res = await fetch{"https://dummyjson.com/products/${productId}"}
+      {!res.ok} = throw new Error("Unable to fetch data")
+      const data = await res.json()
+      SetProduct(data)
+     } catch (error) {
+      console.log(error);
+      
+     }
+    }
+    fetchproductById()
+  },[])
 
   return (
     <div className="wrapper ">
@@ -26,8 +47,9 @@ const PaymentDetails = () => {
         <span className="text-[#BFBFBF] text-base font-medium">/</span>
         <p className="text-base font-medium">Havic HV G-92 Gamepad</p>
       </div>
-      <div className="flex flex-col md:flex-row md:justify-between gap-8">
+      <div className="flex flex-col md:flex-row md:justify-between gap-8" >
         <div className=" w-[171px] md:mx-0 mx-auto space-y-3">
+          <h1>Product ID: {productId}</h1>
           {images.map((image, index) => (
             <div
               key={`${image}-${index}`}
