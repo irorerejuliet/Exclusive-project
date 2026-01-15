@@ -1,4 +1,5 @@
-import { Product } from "@/types/products";
+
+import type { Product } from "@/types/products";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { BiHeart } from "react-icons/bi";
@@ -6,8 +7,8 @@ import { Link, useParams } from "react-router-dom";
 
 const PaymentDetails = () => {
 
-  const {productId} = useParams()
-  const {product SetProduct} = useState<Product: any[]/>()
+  const {id} = useParams<{id: string}>()
+  const [product, setProduct] = useState<Product | null>(null)
 
   const images = [
     "/images/pad1.svg",
@@ -22,17 +23,22 @@ const PaymentDetails = () => {
   useEffect(() => {
     async function fetchproductById() {
      try{
- const res = await fetch{"https://dummyjson.com/products/${productId}"}
-      {!res.ok} = throw new Error("Unable to fetch data")
+ const res = await fetch( `https://dummyjson.com/products/${id}`)
+      if (!res.ok){
+          throw new Error("Unable to fetch data")
+      }
       const data = await res.json()
-      SetProduct(data)
+      setProduct(data)
      } catch (error) {
       console.log(error);
-      
      }
     }
     fetchproductById()
-  },[])
+  },[id])
+
+  if (!product) {
+     return <p className="text-center py-20 text-red-800 text-lg">Loading product...</p>;
+   }
 
   return (
     <div className="wrapper ">
@@ -48,8 +54,7 @@ const PaymentDetails = () => {
         <p className="text-base font-medium">Havic HV G-92 Gamepad</p>
       </div>
       <div className="flex flex-col md:flex-row md:justify-between gap-8" >
-        <div className=" w-[171px] md:mx-0 mx-auto space-y-3">
-          <h1>Product ID: {productId}</h1>
+        <div className=" w-[171px] md:mx-0 mx-auto space-y-3" >
           {images.map((image, index) => (
             <div
               key={`${image}-${index}`}
@@ -64,9 +69,9 @@ const PaymentDetails = () => {
         <div className="md:w-[500px] w-[300px] md:mx-0 mx-auto md:h-[600px] h-[450px]  bg-[#F5F5F5] pt-[154px] pb-[131px] px-[27px] rounded-sm md:mt-0 my-8">
           <img src={currentImage} alt="gamepad" className="w-full h-full" />
         </div>
-        {/* Payment and delivery section */}
+        {/* Product Details */}
         <div className="max-w-sm font-sans space-y-4 ">
-          <h2 className="text-2xl font-semibold">Havic HV G-92 Gamepad</h2>
+          <h2 className="text-2xl font-semibold">${product?.title}</h2>
 
           <div className="flex items-center gap-2 text-sm">
             <div className="text-yellow-400">★★★★★</div>
@@ -74,12 +79,10 @@ const PaymentDetails = () => {
             <span className="text-green-500">| In Stock</span>
           </div>
 
-          <p className="text-2xl font-medium">$192.00</p>
+          <p className="text-2xl font-medium">${product?.price}</p>
 
           <p className="md:text-sm text-xs font-medium">
-            PlayStation 5 Controller Skin High quality vinyl with air channel
-            adhesive for easy bubble free install & mess free removal Pressure
-            sensitive.
+           {product?.description}
           </p>
 
           <hr />
@@ -96,7 +99,7 @@ const PaymentDetails = () => {
               <button
                 key={size}
                 className={`w-8 h-8 text-sm border rounded ${
-                  size === "M" ? "bg-secondary text-white border-secondary" : ""
+                  size === "M" ? "bg-red-400 text-white border-secondary" : ""
                 }`}
               >
                 {size}
@@ -114,14 +117,14 @@ const PaymentDetails = () => {
               </button>
               <span className="px-4">{qty}</span>
               <button
-                className="px-3 bg-secondary  text-white"
+                className="px-3 bg-red-400  text-white"
                 onClick={() => setQty((q) => q + 1)}
               >
                 +
               </button>
             </div>
 
-            <button className="flex-1 border-secondary bg-secondary text-white py-2 rounded">
+            <button className="flex-1 border-secondary bg-red-400 text-white py-2 rounded">
               Buy Now
             </button>
 

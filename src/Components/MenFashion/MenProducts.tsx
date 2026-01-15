@@ -8,6 +8,9 @@ const MenProducts = () => {
        try {
          const res = await fetch("https://dummyjson.com/products/category/mens-watches");
          const data = await res.json();
+         if(res.ok){
+          throw new Error("Unable to fetch data")
+         }
          console.log(data);
          setMenWatches(data)
        } catch (error) {

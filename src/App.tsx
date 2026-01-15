@@ -17,21 +17,19 @@ function App() {
     <>
       <Navbar />
       <Routes>
-        <Route path="/">
-          <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="signup" element={<SignUp />} />
-          <Route path="login" element={<Login />} />
-          <Route path="wishlists" element={<WishLists />} />
-          <Route path="cart" element={<Cart />} />
-          <Route path="account" element={<Account />} />
-          {/* Dynamic category route */}
-          <Route path="categories/:category" element={<ProductCategories />} />
-          {/* Product details */}
-          <Route path="product/:id" element={<ProductDetails />} />
-        </Route>
-      </Routes>
+  <Route path="/" element={<Home />} />
+  <Route path="/about" element={<About />} />
+  <Route path="/contact" element={<Contact />} />
+  <Route path="/signup" element={<SignUp />} />
+  <Route path="/login" element={<Login />} />
+  <Route path="/wishlists" element={<WishLists />} />
+  <Route path="/cart" element={<Cart />} />
+  <Route path="/account" element={<Account />} />
+
+  <Route path="/categories/:category" element={<ProductCategories />} />
+  <Route path="/product/:id" element={<ProductDetails />} />
+</Routes>
+
       <Footer />
     </>
   );
