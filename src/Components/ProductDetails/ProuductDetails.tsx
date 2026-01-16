@@ -1,48 +1,42 @@
-
 import type { Product } from "@/types/products";
-import React, { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BiHeart } from "react-icons/bi";
 import { Link, useParams } from "react-router-dom";
 
-const PaymentDetails = () => {
-
-  const {id} = useParams<{id: string}>()
-  const [product, setProduct] = useState<Product | null>(null)
-
-  const images = [
-    "/images/pad1.svg",
-    "/images/pad2.svg",
-    "/images/pad3.svg",
-    "/images/pad4.svg",
-  ];
-  const [currentImage, setCurrentImage] = useState(images[0]);
+const ProductDetails = () => {
+  const { id } = useParams<{ id: string }>();
+  const [product, setProduct] = useState<Product | null>(null);
+  const [currentImage, setCurrentImage] = useState("");
   const [qty, setQty] = useState(2);
-
 
   useEffect(() => {
     async function fetchproductById() {
-     try{
- const res = await fetch( `https://dummyjson.com/products/${id}`)
-      if (!res.ok){
-          throw new Error("Unable to fetch data")
+      try {
+        const res = await fetch(`https://dummyjson.com/products/${id}`);
+        if (!res.ok) {
+          throw new Error("Unable to fetch data");
+        }
+        const data = await res.json();
+        setProduct(data);
+      } catch (error) {
+        console.log(error);
       }
-      const data = await res.json()
-      setProduct(data)
-     } catch (error) {
-      console.log(error);
-     }
     }
-    fetchproductById()
-  },[id])
+    fetchproductById();
+  }, [id]);
 
   if (!product) {
-     return <p className="text-center py-20 text-red-800 text-lg">Loading product...</p>;
-   }
+    return (
+      <p className="text-center py-20 text-red-800 text-lg">
+        Loading product...
+      </p>
+    );
+  }
 
   return (
     <div className="wrapper ">
       <div className="flex items-center gap-4 py-20">
+        
         <Link to="/" className="text-[#BFBFBF] text-base font-medium">
           Account
         </Link>
@@ -51,11 +45,11 @@ const PaymentDetails = () => {
           Gaming
         </Link>
         <span className="text-[#BFBFBF] text-base font-medium">/</span>
-        <p className="text-base font-medium">Havic HV G-92 Gamepad</p>
+        <p className="text-base font-medium">{product.title}</p>
       </div>
-      <div className="flex flex-col md:flex-row md:justify-between gap-8" >
-        <div className=" w-[171px] md:mx-0 mx-auto space-y-3" >
-          {images.map((image, index) => (
+      <div className="flex flex-col md:flex-row md:justify-between gap-8">
+        <div className=" w-[171px] md:mx-0 mx-auto space-y-3">
+          {product?.images?.map((image, index) => (
             <div
               key={`${image}-${index}`}
               className="p-2 bg-[#F5F5F5] rounded-sm flex justify-center items-center"
@@ -67,11 +61,15 @@ const PaymentDetails = () => {
           ))}
         </div>
         <div className="md:w-[500px] w-[300px] md:mx-0 mx-auto md:h-[600px] h-[450px]  bg-[#F5F5F5] pt-[154px] pb-[131px] px-[27px] rounded-sm md:mt-0 my-8">
-          <img src={currentImage} alt="gamepad" className="w-full h-full" />
+          <img
+            src={currentImage || product?.thumbnail}
+            alt="gamepad"
+            className="w-full h-full"
+          />
         </div>
         {/* Product Details */}
         <div className="max-w-sm font-sans space-y-4 ">
-          <h2 className="text-2xl font-semibold">${product?.title}</h2>
+          <h2 className="text-2xl font-semibold">{product?.title}</h2>
 
           <div className="flex items-center gap-2 text-sm">
             <div className="text-yellow-400">★★★★★</div>
@@ -82,7 +80,7 @@ const PaymentDetails = () => {
           <p className="text-2xl font-medium">${product?.price}</p>
 
           <p className="md:text-sm text-xs font-medium">
-           {product?.description}
+            {product?.description}
           </p>
 
           <hr />
@@ -172,4 +170,4 @@ const PaymentDetails = () => {
   );
 };
 
-export default PaymentDetails;
+export default ProductDetails;

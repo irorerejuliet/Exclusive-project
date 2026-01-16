@@ -1,6 +1,6 @@
 import React from 'react'
 import Details from '../Components/ProductDetails/Details'
-import PaymentDetails from '../Components/ProductDetails/PaymentDetails'
+import PaymentDetails from '../Components/ProductDetails/ProuductDetails'
 
 
 const ProductDetails = () => {
