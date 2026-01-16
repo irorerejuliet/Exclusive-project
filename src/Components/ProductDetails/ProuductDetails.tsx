@@ -36,7 +36,6 @@ const ProductDetails = () => {
   return (
     <div className="wrapper ">
       <div className="flex items-center gap-4 py-20">
-        
         <Link to="/" className="text-[#BFBFBF] text-base font-medium">
           Account
         </Link>
@@ -70,7 +69,7 @@ const ProductDetails = () => {
         {/* Product Details */}
         <div className="max-w-sm font-sans space-y-4 ">
           <h2 className="text-2xl font-semibold">{product?.title}</h2>
-
+          <p>{product?.date}</p>
           <div className="flex items-center gap-2 text-sm">
             <div className="text-yellow-400">★★★★★</div>
             <span className="text-gray-400">(150 Reviews)</span>

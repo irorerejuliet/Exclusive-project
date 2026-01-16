@@ -28,6 +28,9 @@ export interface Product {
   meta: Meta;
   images: string[];
   thumbnail: string;
+  comment: string;
+  date: string;
+ 
 }
 
 export interface Dimensions {
