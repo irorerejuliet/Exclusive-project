@@ -33,6 +33,7 @@ const ProductDetails = () => {
     );
   }
 
+  console.log(product.reviews);
   return (
     <div className="wrapper ">
       <div className="flex items-center gap-4 py-20">
@@ -40,11 +41,14 @@ const ProductDetails = () => {
           Account
         </Link>
         <span className="text-[#BFBFBF] text-base font-medium">/</span>
-        <Link to="/about" className="text-[#BFBFBF] text-base font-medium">
-          Gaming
+        <Link
+          to={`/categories/${product?.category}`}
+          className="text-[#BFBFBF] text-base font-medium capitalize"
+        >
+          {product?.category}
         </Link>
         <span className="text-[#BFBFBF] text-base font-medium">/</span>
-        <p className="text-base font-medium">{product.title}</p>
+        <p className="text-base font-medium capitalize">{product.title}</p>
       </div>
       <div className="flex flex-col md:flex-row md:justify-between gap-8">
         <div className=" w-[171px] md:mx-0 mx-auto space-y-3">
@@ -164,6 +168,14 @@ const ProductDetails = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div>
+        {product?.reviews?.map((review, i) => (
+          <div key={`${review.rating}-${i}`}>
+            <p>{review.comment}</p>
+            <p>{review.date}</p>
+          </div>
+        ))}
       </div>
     </div>
   );
