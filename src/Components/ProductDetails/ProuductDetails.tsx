@@ -172,7 +172,7 @@ const ProductDetails = () => {
       <div>
         {product?.reviews?.map((review, i) => (
           <div key={`${review.rating}-${i}`}>
-            <p>{review.comment}</p>
+            <p className="text-red-700 bg-amber-500">{review.comment}</p>
             <p>{review.date}</p>
           </div>
         ))}
