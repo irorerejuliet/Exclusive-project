@@ -132,6 +132,7 @@ const ProductDetails = () => {
             <button className="border rounded p-2">
               <BiHeart size={18} />
             </button>
+            <p>{}</p>
           </div>
 
           <div className="border rounded p-4 space-y-3 text-sm w-[399px]">
@@ -172,8 +173,11 @@ const ProductDetails = () => {
       <div>
         {product?.reviews?.map((review, i) => (
           <div key={`${review.rating}-${i}`}>
-            <p className="text-red-700 bg-amber-500">{review.comment}</p>
+            <p className="bg-red-400">{review.comment}</p>
             <p>{review.date}</p>
+            <p>{review.comment}</p>
+            <p>{review.reviewerName}</p>
+            <p>{review.reviewerEmail}</p>
           </div>
         ))}
       </div>
