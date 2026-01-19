@@ -1,4 +1,6 @@
 import type { Product } from "@/types/products";
+import formattedDate from "@/utils/formattedDate";
+import { ratingAndStars } from "@/utils/ratingAndStars";
 import { useEffect, useState } from "react";
 import { BiHeart } from "react-icons/bi";
 import { Link, useParams } from "react-router-dom";
@@ -9,6 +11,7 @@ const ProductDetails = () => {
   const [currentImage, setCurrentImage] = useState("");
   const [qty, setQty] = useState(2);
 
+  
   useEffect(() => {
     async function fetchproductById() {
       try {
@@ -180,7 +183,7 @@ const ProductDetails = () => {
       <div className="border-b mt-10"></div>
       <div className="w-full mt-20 rounded-lg border border-red-200 bg-white shadow-md p-6">
         <h3 className="text-2xl font-semibold text-red-700 mb-6 border-b border-red-100 pb-2">
-          Customer Reviews:
+          Customer Reviews
         </h3>
 
         {/* Reviews */}
@@ -195,27 +198,31 @@ const ProductDetails = () => {
             </p>
 
             {/* Reviewer Info */}
-            <div className="flex justify-between items-center gap-4">
+            <div className="flex  justify-between items-center gap-4">
               <div className="flex items-center gap-4">
                 <img
                   src="/images/frank.jpeg"
                   alt={review.reviewerName}
                   className="w-11 h-11 rounded-full object-cover ring-2 ring-gray-100"
                 />
-
                 <div className="flex flex-col">
-                  <span className="text-sm font-semibold text-gray-900">
-                    {review.reviewerName}
-                  </span>
+                  <div className="flex  md:gap-5  items-center">
+                    <span className="text-sm font-semibold text-gray-900">
+                      {review.reviewerName}
+                    </span>
+                    <p className="flex">{ratingAndStars(review.rating)}</p>
+                  </div>
 
-                  <span className="text-xs text-gray-500">{review.date}</span>
+                  <span className="text-xs text-gray-500">
+                    {formattedDate}
+                  </span>
 
                   <span className="text-xs text-blue-600 hover:underline cursor-pointer">
                     {review.reviewerEmail}
                   </span>
                 </div>
               </div>
-              <p className="text-sm font-medium text-gray-400">two weeks ago</p>
+              <p className="text-sm font-medium text-gray-400 ">two weeks ago</p>
             </div>
           </div>
         ))}

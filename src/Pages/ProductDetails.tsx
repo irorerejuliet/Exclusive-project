@@ -1,12 +1,10 @@
+import Details from '@/Components/ProductDetails/Details'
 import React from 'react'
-import Details from '../Components/ProductDetails/Details'
-import PaymentDetails from '../Components/ProductDetails/ProuductDetails'
-
 
 const ProductDetails = () => {
   return (
     <div>
-      <PaymentDetails/>
+      <ProductDetails/>
       <Details/>
     </div>
   )

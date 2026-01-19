@@ -19,19 +19,6 @@ const SalesTime = () => {
         <h2 className="text-3xl font-bold mb-4">Flash Sales</h2>
 
         <div className="flex gap-4 items-center">
-          {/* {items.map(({ id, title, time }) => (
-            <div key={id}>
-              <h3 className="text-xs font-medium text-center">{title}</h3>
-              <div className="flex items-center justify-between ">
-                <span className="text-3xl font-bold">{time}</span>
-                {title !== "Seconds" && (
-                  <span className="text-[#E07575] text-2xl font-semibold">
-                    :
-                  </span>
-                )}
-              </div>
-            </div>
-          ))} */}
           <div className="text-3xl font-bold">{time}</div>
         </div>
       </div>
