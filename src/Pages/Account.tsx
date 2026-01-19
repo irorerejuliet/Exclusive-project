@@ -1,5 +1,5 @@
 import React from 'react'
-import AccountDetails from '../Components/Account/AccountDetails'
+import AccountDetails from '../Components/Banner/Account/AccountDetails'
 
 const Account = () => {
   return (

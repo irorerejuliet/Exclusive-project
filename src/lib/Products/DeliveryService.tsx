@@ -1,10 +1,13 @@
-import { deliveryData } from "../Constants/deliveryData";
+import { deliveryData } from "../../Components/Constants/deliveryData";
 
 const DeliveryService = () => {
   return (
     <div className="my-40 md:flex flex-row justify-center gap-60 items-center">
       {deliveryData.map(({ id, image, title, description }) => (
-        <div key={id} className="flex flex-col items-center text-center md:py-0 py-5">
+        <div
+          key={id}
+          className="flex flex-col items-center text-center md:py-0 py-5"
+        >
           <div className="w-16 h-16 rounded-full bg-[#C1C0C1] p-1 flex items-center justify-center">
             <img
               src={image}

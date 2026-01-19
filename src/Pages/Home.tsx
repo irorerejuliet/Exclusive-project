@@ -1,11 +1,11 @@
 import HeroSection from "../Components/Banner/HeroSection";
-import BestSellingProduct from "../Components/Products/BestSellingProduct";
-import Categories from "../Components/Products/Categories";
-import DeliveryService from "../Components/Products/DeliveryService";
-import ExploreOurProducts from "../Components/Products/ExploreOurProducts";
-import FlashSales from "../Components/Products/FlashSales";
-import MusicExperience from "../Components/Products/MusicExperience";
-import NewArrival from "../Components/Products/NewArrival";
+import BestSellingProduct from "../lib/Products/BestSellingProduct";
+import Categories from "../lib/Products/Categories";
+import DeliveryService from "../lib/Products/DeliveryService";
+import ExploreOurProducts from "../lib/Products/ExploreOurProducts";
+import FlashSales from "../lib/Products/FlashSales";
+import MusicExperience from "../lib/Products/MusicExperience";
+import NewArrival from "../lib/Products/NewArrival";
 
 const Home = () => {
   return (

@@ -1,4 +1,4 @@
-import { categoriesData } from "../Constants/categoriesData";
+import { categoriesData } from "../../Components/Constants/categoriesData";
 
 const Categories = () => {
   return (
@@ -36,6 +36,6 @@ const Categories = () => {
       <div className="w-full border-t border-gray-200 mt-20"></div>
     </div>
   );
-}
+};
 
-export default Categories
+export default Categories;

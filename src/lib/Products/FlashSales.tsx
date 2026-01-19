@@ -1,8 +1,8 @@
 import SalesTime from "./SalesTime";
 
-import ProductCard from "../Products/ProductCard";
+import ProductCard from "./ProductCard";
 import useProducts from "../../hooks/useProducts";
-import CardSheleton from "../ui/CardSkeleton";
+import CardSheleton from "../../Components/ui/CardSkeleton";
 const FlashSales = () => {
   const { data, loading } = useProducts();
 

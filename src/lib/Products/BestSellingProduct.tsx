@@ -1,12 +1,9 @@
-
 import ProductCard from "./ProductCard";
 import useProducts from "../../hooks/useProducts";
-import CardSkeleton from "../ui/CardSkeleton";
-
-
+import CardSkeleton from "../../Components/ui/CardSkeleton";
 
 const BestSellingProduct = () => {
-  const {data, loading} = useProducts()
+  const { data, loading } = useProducts();
 
   return (
     <div className="my-40">
@@ -20,14 +17,14 @@ const BestSellingProduct = () => {
           View All
         </button>
       </div>
-        <div className="grid md:grid-cols-4 grid-cols-1  justify-between items-center gap-10 space-y-10 md:space-y-0 md:px-0 px-10">
-          {loading && [1,2,3,4].map((_,i) =><CardSkeleton key={i}/>)}
-          {data?.products?.slice(6,10).map((product) =>(
-             <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
+      <div className="grid md:grid-cols-4 grid-cols-1  justify-between items-center gap-10 space-y-10 md:space-y-0 md:px-0 px-10">
+        {loading && [1, 2, 3, 4].map((_, i) => <CardSkeleton key={i} />)}
+        {data?.products?.slice(6, 10).map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      </div>
     </div>
   );
-}
+};
 
-export default BestSellingProduct
+export default BestSellingProduct;

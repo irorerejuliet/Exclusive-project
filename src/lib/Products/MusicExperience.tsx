@@ -1,9 +1,8 @@
-import { salesTime } from "../Constants/salesData";
+import { salesTime } from "../../Components/Constants/salesData";
 
 const MusicExperience = () => {
   return (
     <div className="bg-black text-white flex flex-col md:flex-row justify-between items-center py-16 px-6 md:px-20">
-      
       {/* LEFT TEXT SECTION */}
       <div className="text-center md:text-left">
         <p className="text-[#00FF66] text-base font-bold">Categories</p>
@@ -20,7 +19,9 @@ const MusicExperience = () => {
               className="flex flex-col justify-center items-center rounded-full bg-white text-black size-16 md:size-[62px]"
             >
               <span className="text-lg md:text-xl font-bold">{time}</span>
-              <h3 className="text-[10px] md:text-xs font-medium text-center">{title}</h3>
+              <h3 className="text-[10px] md:text-xs font-medium text-center">
+                {title}
+              </h3>
             </div>
           ))}
         </div>

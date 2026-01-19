@@ -2,7 +2,7 @@ import useProducts from "../../hooks/useProducts";
 import ProductCard from "./ProductCard";
 import { shuffleArray } from "../../utils/shuffleArray";
 import "react-loading-skeleton/dist/skeleton.css";
-import CardSkeleton from "../ui/CardSkeleton";
+import CardSkeleton from "../../Components/ui/CardSkeleton";
 
 const ExploreOurProducts = () => {
   const { data, loading } = useProducts();
@@ -34,7 +34,7 @@ const ExploreOurProducts = () => {
       </div>
 
       <div className="flex-row md:flex justify-between items-center gap-10 space-y-10 md:space-y-0 md:px-0 px-10">
-        {loading && [1,2,3,4].map((_,i) => <CardSkeleton key={i}/>)}
+        {loading && [1, 2, 3, 4].map((_, i) => <CardSkeleton key={i} />)}
         {products &&
           !loading &&
           products

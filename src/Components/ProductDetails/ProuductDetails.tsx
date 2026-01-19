@@ -36,6 +36,9 @@ const ProductDetails = () => {
   console.log(product.reviews);
   return (
     <div className="wrapper ">
+      <p className="text-2xl font-medium text-green-600 flex  justify-end pt-10">
+        FREE SHOPPING ON ORDER $50+
+      </p>
       <div className="flex items-center gap-4 py-20">
         <Link to="/" className="text-[#BFBFBF] text-base font-medium">
           Account
@@ -75,11 +78,14 @@ const ProductDetails = () => {
           <h2 className="text-2xl font-semibold">{product?.title}</h2>
           <p>{product?.date}</p>
           <div className="flex items-center gap-2 text-sm">
-            <div className="text-yellow-400">★★★★★</div>
+            <div className="text-yellow-400">{product.rating}</div>
             <span className="text-gray-400">(150 Reviews)</span>
-            <span className="text-green-500">| In Stock</span>
+            <span className="text-green-500">
+              {" "}
+              {product.stock} | In Stock::
+            </span>
           </div>
-
+          <p>Brand: {product.brand}</p>
           <p className="text-2xl font-medium">${product?.price}</p>
 
           <p className="md:text-sm text-xs font-medium">
@@ -144,9 +150,12 @@ const ProductDetails = () => {
               />
               <div>
                 <p className="font-medium">Free Delivery</p>
-                <p className="text-gray-500">
-                  Enter your postal code for Delivery Availability
-                </p>
+                <input
+                  className="text-gray-500 w-[300px] p-1"
+                  type="text"
+                  placeholder=" Enter your postal code for Delivery Availability"
+                />
+                <p>{product.warrantyInformation}</p>
               </div>
             </div>
 
@@ -162,24 +171,52 @@ const ProductDetails = () => {
               </span>
               <div>
                 <p className="font-medium">Return Delivery</p>
-                <p className="text-gray-500">
-                  Free 30 Days Delivery Returns. Details
-                </p>
+                <p className="text-gray-500">{product.returnPolicy}</p>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div>
+      <div className="border-b mt-10"></div>
+      <div className="w-full mt-20 rounded-lg border border-red-200 bg-white shadow-md p-6">
+        <h3 className="text-2xl font-semibold text-red-700 mb-6 border-b border-red-100 pb-2">
+          Customer Reviews:
+        </h3>
+
         {/* Reviews */}
-        {product?.reviews?.map((review, i) => (
-          <div key={`${review.rating}-${i}`}>
-            <p>Reviews:</p>
-            <p className="">{review.comment}</p>
-            <p>{review.date}</p>
-            <p>{review.comment}</p>
-            <p>{review.reviewerName}</p>
-            <p>{review.reviewerEmail}</p>
+        {product?.reviews?.map((review, index) => (
+          <div
+            key={`${review.comment}-${index}`}
+            className="mb-6 last:mb-0 rounded-xl border border-gray-100 bg-white p-5 shadow-sm transition hover:shadow-md"
+          >
+            {/* Comment */}
+            <p className="text-sm text-gray-800 leading-relaxed mb-4">
+              “{review.comment}”
+            </p>
+
+            {/* Reviewer Info */}
+            <div className="flex justify-between items-center gap-4">
+              <div className="flex items-center gap-4">
+                <img
+                  src="/images/frank.jpeg"
+                  alt={review.reviewerName}
+                  className="w-11 h-11 rounded-full object-cover ring-2 ring-gray-100"
+                />
+
+                <div className="flex flex-col">
+                  <span className="text-sm font-semibold text-gray-900">
+                    {review.reviewerName}
+                  </span>
+
+                  <span className="text-xs text-gray-500">{review.date}</span>
+
+                  <span className="text-xs text-blue-600 hover:underline cursor-pointer">
+                    {review.reviewerEmail}
+                  </span>
+                </div>
+              </div>
+              <p className="text-sm font-medium text-gray-400">two weeks ago</p>
+            </div>
           </div>
         ))}
       </div>
