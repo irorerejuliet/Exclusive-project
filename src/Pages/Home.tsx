@@ -8,6 +8,7 @@ import MusicExperience from "../lib/Products/MusicExperience";
 import NewArrival from "../lib/Products/NewArrival";
 
 const Home = () => {
+  console.log(import.meta.env.VITE_API_URL);
   return (
     <main className="wrapper md:px-0 px-4">
       <HeroSection />

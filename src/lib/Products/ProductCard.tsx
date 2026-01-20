@@ -3,23 +3,7 @@ import { formatCurrency } from "../../helper/formatCurrency";
 import type { Product } from "../../types/products";
 import { ratingAndStars, } from "@/utils/ratingAndStars";
 
-// function for rationg
-// const productRating = (rating: number) => {
-//   const stars = [];
 
-//   for (let i = 1; i <= 5; i++){
-//     if(rating>=1){
-//       stars.push(<FaStar key={i} className="text-yellow-400" />)
-//     } else if(rating >= 1 - 0.5){
-//       stars.push(<FaStarHalfAlt key={i} className="text-yellow-400" />);
-//     }else{
-//       stars.push(<FaRegStar key={i} className="text-yellow-400" />)
-//     }
-//   }
-
-
-//   return stars;
-// };
 
 interface ProductCardProps {
   product: Product;
@@ -28,7 +12,7 @@ interface ProductCardProps {
 const ProductCard = ({ product }: ProductCardProps) => {
   const { id, thumbnail, discountPercentage, title, price, rating } = product;
   return (
-    <div key={id} className="w-[270px]">
+    <div  className="w-[270px]">
       {/* Card */}
       <div className="relative bg-[#F5F5F5] shadow rounded-xl p-4">
         <button className="absolute top-3 left-3 bg-primary text-white py-1 px-2 rounded-md">
@@ -59,7 +43,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
         </div>
         <div className="flex items-center gap-2 mt-1">
           {/* <img src={stars} alt="rating" /> */}
-          <div className="flex">{ratingAndStars(rating)}</div>
+          {/* <div className="flex">{ratingAndStars(rating)}</div> */}
           <span className="text-gray-500">{rating}</span>
         </div>
       </div>

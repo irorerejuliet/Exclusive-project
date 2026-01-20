@@ -1,3 +1,4 @@
+import useFetch from "@/hooks/useFetch";
 import type { Product } from "@/types/products";
 import formattedDate from "@/utils/formattedDate";
 import { ratingAndStars } from "@/utils/ratingAndStars";
@@ -7,28 +8,34 @@ import { Link, useParams } from "react-router-dom";
 
 const ProductDetails = () => {
   const { id } = useParams<{ id: string }>();
-  const [product, setProduct] = useState<Product | null>(null);
+  // const [product, setProduct] = useState<Product | null>(null);
   const [currentImage, setCurrentImage] = useState("");
   const [qty, setQty] = useState(2);
 
-  
-  useEffect(() => {
-    async function fetchproductById() {
-      try {
-        const res = await fetch(`https://dummyjson.com/products/${id}`);
-        if (!res.ok) {
-          throw new Error("Unable to fetch data");
-        }
-        const data = await res.json();
-        setProduct(data);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    fetchproductById();
-  }, [id]);
+  const { data, isLoading, error } = useFetch({
+    url: "products",
+    params: id as string,
+  });
+  console.log(data, "single product");
 
-  if (!product) {
+  const product = data as Product;
+  // useEffect(() => {
+  //   async function fetchproductById() {
+  //     try {
+  //       const res = await fetch(`https://dummyjson.com/products/${id}`);
+  //       if (!res.ok) {
+  //         throw new Error("Unable to fetch data");
+  //       }
+  //       const data = await res.json();
+  //       setProduct(data);
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   }
+  //   fetchproductById();
+  // }, [id]);
+
+  if (isLoading) {
     return (
       <p className="text-center py-20 text-red-800 text-lg">
         Loading product...
@@ -36,6 +43,10 @@ const ProductDetails = () => {
     );
   }
 
+  if (error) {
+    return <h1>{error}</h1>;
+  }
+  if (!product && !isLoading) return <h2>NO Product found in id {id}</h2>;
   console.log(product.reviews);
   return (
     <div className="wrapper ">
@@ -213,16 +224,16 @@ const ProductDetails = () => {
                     <p className="flex">{ratingAndStars(review.rating)}</p>
                   </div>
 
-                  <span className="text-xs text-gray-500">
-                    {formattedDate}
-                  </span>
+                  <span className="text-xs text-gray-500">{formattedDate}</span>
 
                   <span className="text-xs text-blue-600 hover:underline cursor-pointer">
                     {review.reviewerEmail}
                   </span>
                 </div>
               </div>
-              <p className="text-sm font-medium text-gray-400 ">two weeks ago</p>
+              <p className="text-sm font-medium text-gray-400 ">
+                two weeks ago
+              </p>
             </div>
           </div>
         ))}
