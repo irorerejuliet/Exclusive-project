@@ -31,11 +31,6 @@ const ProductCard = ({ product }: ProductCardProps) => {
       <div className="mt-4 w-[210px]">
         <p className="font-semibold text-lg">{title}</p>
         <div className="flex items-center gap-1">
-          <p className="text-primary flex gap-4 font-medium">
-            {/* {discounted_price > 0
-              ? formatCurrency(discounted_price)
-              : formatCurrency(price)} */}
-          </p>
 
           <p className="text-black/50 line-through flex gap-4 font-medium">
             {formatCurrency(price)}
@@ -43,7 +38,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
         </div>
         <div className="flex items-center gap-2 mt-1">
           {/* <img src={stars} alt="rating" /> */}
-          {/* <div className="flex">{ratingAndStars(rating)}</div> */}
+           <div className="flex">{ratingAndStars(rating)}</div> 
           <span className="text-gray-500">{rating}</span>
         </div>
       </div>

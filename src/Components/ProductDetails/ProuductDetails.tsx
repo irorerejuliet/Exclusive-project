@@ -2,7 +2,7 @@ import useFetch from "@/hooks/useFetch";
 import type { Product } from "@/types/products";
 import formattedDate from "@/utils/formattedDate";
 import { ratingAndStars } from "@/utils/ratingAndStars";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { BiHeart } from "react-icons/bi";
 import { Link, useParams } from "react-router-dom";
 
@@ -105,29 +105,7 @@ const ProductDetails = () => {
           <p className="md:text-sm text-xs font-medium">
             {product?.description}
           </p>
-
           <hr />
-
-          <div className="flex items-center gap-4">
-            <span className="text-xl  font-normal">Colours:</span>
-            <div className="w-5 h-5 rounded-full border bg-[#A0BCE0]" />
-            <div className="w-5 h-5 rounded-full bg-[#E07575]" />
-          </div>
-
-          <div className="flex items-center gap-3">
-            <span className="text-xl font-n">Size:</span>
-            {["XS", "S", "M", "L", "XL"].map((size) => (
-              <button
-                key={size}
-                className={`w-8 h-8 text-sm border rounded ${
-                  size === "M" ? "bg-red-400 text-white border-secondary" : ""
-                }`}
-              >
-                {size}
-              </button>
-            ))}
-          </div>
-
           <div className="flex items-center gap-3">
             <div className="flex items-center border rounded">
               <button
@@ -164,11 +142,9 @@ const ProductDetails = () => {
               />
               <div>
                 <p className="font-medium">Free Delivery</p>
-                <input
-                  className="text-gray-500 w-[300px] p-1"
-                  type="text"
-                  placeholder=" Enter your postal code for Delivery Availability"
-                />
+                <p className="text-gray-500 w-[300px] p-1">
+                  Enter your postal code for Delivery Availability
+                </p>
                 <p>{product.warrantyInformation}</p>
               </div>
             </div>
@@ -223,9 +199,7 @@ const ProductDetails = () => {
                     </span>
                     <p className="flex">{ratingAndStars(review.rating)}</p>
                   </div>
-
                   <span className="text-xs text-gray-500">{formattedDate}</span>
-
                   <span className="text-xs text-blue-600 hover:underline cursor-pointer">
                     {review.reviewerEmail}
                   </span>
